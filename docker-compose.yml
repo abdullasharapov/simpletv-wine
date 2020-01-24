@@ -2,7 +2,7 @@ version: '2'
 services:
   simpletv-wine:
      container_name: simpletv-wine
-     image: ubuntu:18.04
+     image: achilles85/simpletv-wine:latest
      restart: unless-stopped
      ports:
        - 10000:10000
