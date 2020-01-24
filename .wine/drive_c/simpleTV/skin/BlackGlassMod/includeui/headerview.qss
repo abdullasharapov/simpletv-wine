@@ -1,0 +1,17 @@
+QHeaderView {
+ background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 rgba(97,97,97,200), stop: 0.5 rgba(80,80,80,200),
+                                      stop: 0.6 rgba(67,67,67,200), stop:1 rgba(101,101,101,200));
+}
+
+									  
+QHeaderView::section {
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 rgba(97,97,97,200), stop: 0.5 rgba(80,80,80,200),
+                                      stop: 0.6 rgba(67,67,67,200), stop:1 rgba(101,101,101,200));
+
+	color: rgba(255, 255, 134,200);
+    padding-left: 4px;
+    border: 1px solid #6c6c6c;
+}
+

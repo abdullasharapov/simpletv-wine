@@ -1,0 +1,16 @@
+QAbstractButton {
+    border: 2px solid rgba(10, 10, 10, 255);
+    border-radius: 0px;
+    background-color: rgba(200, 200, 200, 210);
+    min-width: 100px;
+   padding: 3px;
+}
+QAbstractButton:pressed {
+    border: 2px solid rgba(80, 80, 230, 240);
+	background-color: rgba(100, 100, 100, 255);
+}
+QAbstractButton:hover:!pressed
+{
+   border: 2px solid rgba(80, 80, 230, 240);
+	background-color: rgba(210, 210, 210, 255);
+}

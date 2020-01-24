@@ -1,0 +1,32 @@
+Описание модуля checkudpxy.
+--------------------------
+
+--------------------------
+Модуль содержит 2 функции:
+
+checkhost(ip, port [,timeout])
+  timeout - по умолчанию равен 0.4 сек
+  возвращает integer от 0 до 9 - количество пользователей udpxy, либо -1 или -2 в случае неудачи
+  
+checkstream(ip, port, stream [,timeout]) 
+  stream  - в виде "/udp/233.7.70.111:5000"
+  timeout - по умолчанию равен 5 сек
+  возвращает true/false - признак того, что возвращается поток 
+---------------------------
+Пример использования :
+	
+	require 'checkudpxy'
+	
+	local ip     = "92.127.193.128"
+	local port   = "1234"
+	local stream = "/udp/233.7.70.111:5000"
+	      
+	
+	check = checkudpxy.checkhost(ip, port)  
+	if check >=0 and check < 7 then                -- проверка количества пользователей
+		if  checkudpxy.checkstream(ip, port, stream) then  
+		 --  ip прошел все проверки и выдает поток по адресу в stream
+		end
+	end
+	
+	

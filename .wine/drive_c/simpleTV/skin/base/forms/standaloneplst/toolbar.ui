@@ -1,0 +1,892 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CTreeToolBar</class>
+ <widget class="CTreeToolBar" name="CTreeToolBar">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>747</width>
+    <height>80</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Ignored" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::NoContextMenu</enum>
+  </property>
+  <property name="skinBackground" stdset="0">
+   <string notr="true">usetransparent=&quot;1&quot; can_glass=&quot;1&quot; useSystemColorizationColor=&quot;0&quot; hideAllWhenGlass=&quot;1&quot; hideImageWhenTransparent=&quot;1&quot;  colorizationColorMinAlpha=&quot;0.0&quot;  src=&quot;img\tree\toolbar\toolbarback.png&quot;</string>
+  </property>
+  <property name="minFor2Row" stdset="0">
+   <number>500</number>
+  </property>
+  <layout class="QGridLayout" name="grid0">
+   <property name="sizeConstraint">
+    <enum>QLayout::SetMinimumSize</enum>
+   </property>
+   <property name="leftMargin">
+    <number>3</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>3</number>
+   </property>
+   <property name="spacing">
+    <number>1</number>
+   </property>
+   <item row="0" column="0">
+    <layout class="QHBoxLayout" name="row1" stretch="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0">
+     <property name="spacing">
+      <number>1</number>
+     </property>
+     <property name="sizeConstraint">
+      <enum>QLayout::SetMinimumSize</enum>
+     </property>
+     <item alignment="Qt::AlignLeft">
+      <widget class="CSkinButton" name="LOAD_PLAYLIST_ID">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonIconOnly</enum>
+       </property>
+       <property name="skinImage" stdset="0">
+        <stringlist notr="true">
+         <string>src=&quot;img\tree\toolbar\loadplst.png&quot; tooltip=&quot;translateMe(Load playlist)&quot; statecount=&quot;3&quot; duration=&quot;200&quot; checked=&quot;1&quot;</string>
+        </stringlist>
+       </property>
+      </widget>
+     </item>
+     <item alignment="Qt::AlignLeft">
+      <widget class="CSkinButton" name="REFRESH_PLAYLIST_ID">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonIconOnly</enum>
+       </property>
+       <property name="skinImage" stdset="0">
+        <stringlist notr="true">
+         <string>src=&quot;img\tree\toolbar\refreshplst.png&quot; tooltip=&quot;translateMe(Refresh playlist)&quot;</string>
+        </stringlist>
+       </property>
+      </widget>
+     </item>
+     <item alignment="Qt::AlignLeft">
+      <widget class="CSkinButton" name="SEPARATOR_ID">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="text">
+        <string notr="true"/>
+       </property>
+       <property name="skinImage" stdset="0">
+        <stringlist notr="true">
+         <string>src=&quot;img\tree\toolbar\toolbarseparator.png&quot;</string>
+        </stringlist>
+       </property>
+      </widget>
+     </item>
+     <item alignment="Qt::AlignLeft">
+      <widget class="CSkinButton" name="FAVORIT_ID">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonIconOnly</enum>
+       </property>
+       <property name="skinImage" stdset="0">
+        <stringlist notr="true">
+         <string>src=&quot;img\tree\toolbar\toolbarfav.png&quot; tooltip=&quot;translateMe(Favorite channels/media)&quot;</string>
+         <string>checked=&quot;1&quot; src=&quot;img\tree\toolbar\toolbarfav1.png&quot; maxcount=&quot;1&quot; duration=&quot;0&quot; tooltip=&quot;translateMe(Favorite channels/media)&quot;</string>
+         <string>disabled=&quot;1&quot; src=&quot;img\tree\toolbar\toolbarfav2.png&quot;</string>
+        </stringlist>
+       </property>
+      </widget>
+     </item>
+     <item alignment="Qt::AlignLeft">
+      <widget class="CSkinButton" name="SHOWGROUP_ID">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonIconOnly</enum>
+       </property>
+       <property name="skinImage" stdset="0">
+        <stringlist notr="true">
+         <string>src=&quot;img\tree\toolbar\toolbargroup.png&quot; tooltip=&quot;translateMe(Enable grouping)&quot;</string>
+         <string>checked=&quot;1&quot; src=&quot;img\tree\toolbar\toolbargroup1.png&quot; maxcount=&quot;1&quot; duration=&quot;0&quot; tooltip=&quot;translateMe(Disable grouping)&quot;</string>
+        </stringlist>
+       </property>
+      </widget>
+     </item>
+     <item alignment="Qt::AlignLeft">
+      <widget class="CSkinButton" name="SEPARATOR_ID">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="text">
+        <string notr="true"/>
+       </property>
+       <property name="skinImage" stdset="0">
+        <stringlist notr="true">
+         <string>src=&quot;img\tree\toolbar\toolbarseparator.png&quot;</string>
+        </stringlist>
+       </property>
+      </widget>
+     </item>
+     <item alignment="Qt::AlignLeft">
+      <widget class="CSkinButton" name="NEW_ID">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonIconOnly</enum>
+       </property>
+       <property name="skinImage" stdset="0">
+        <stringlist notr="true">
+         <string>src=&quot;img\tree\toolbar\toolbarnew.png&quot; tooltip=&quot;translateMe(New channel/media)&quot;</string>
+        </stringlist>
+       </property>
+      </widget>
+     </item>
+     <item alignment="Qt::AlignLeft">
+      <widget class="CSkinButton" name="NEW_GROUP_ID">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonIconOnly</enum>
+       </property>
+       <property name="skinImage" stdset="0">
+        <stringlist notr="true">
+         <string>src=&quot;img\tree\toolbar\toolbarnewgroup.png&quot; tooltip=&quot;translateMe(New group)&quot;</string>
+        </stringlist>
+       </property>
+      </widget>
+     </item>
+     <item alignment="Qt::AlignLeft">
+      <widget class="CSkinButton" name="SEPARATOR_ID">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="text">
+        <string notr="true"/>
+       </property>
+       <property name="skinImage" stdset="0">
+        <stringlist notr="true">
+         <string>src=&quot;img\tree\toolbar\toolbarseparator.png&quot;</string>
+        </stringlist>
+       </property>
+      </widget>
+     </item>
+     <item alignment="Qt::AlignLeft">
+      <widget class="CSkinButton" name="DELETE_ID">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonIconOnly</enum>
+       </property>
+       <property name="skinImage" stdset="0">
+        <stringlist notr="true">
+         <string>src=&quot;img\tree\toolbar\toolbardelete.png&quot; tooltip=&quot;translateMe(Delete)&quot;</string>
+        </stringlist>
+       </property>
+      </widget>
+     </item>
+     <item alignment="Qt::AlignLeft">
+      <widget class="CSkinButton" name="DELETE_ALL_ID">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonIconOnly</enum>
+       </property>
+       <property name="skinImage" stdset="0">
+        <stringlist notr="true">
+         <string>src=&quot;img\tree\toolbar\toolbardeleteall.png&quot; tooltip=&quot;translateMe(Delete all visible)&quot;</string>
+        </stringlist>
+       </property>
+      </widget>
+     </item>
+     <item alignment="Qt::AlignLeft">
+      <widget class="CSkinButton" name="SEPARATOR_ID">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="text">
+        <string notr="true"/>
+       </property>
+       <property name="skinImage" stdset="0">
+        <stringlist notr="true">
+         <string>src=&quot;img\tree\toolbar\toolbarseparator.png&quot;</string>
+        </stringlist>
+       </property>
+      </widget>
+     </item>
+     <item alignment="Qt::AlignLeft">
+      <widget class="CSkinButton" name="PROGRAMM_VIEW_ID">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="popupMode">
+        <enum>QToolButton::InstantPopup</enum>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonIconOnly</enum>
+       </property>
+       <property name="skinImage" stdset="0">
+        <stringlist notr="true">
+         <string>src=&quot;img\tree\toolbar\toolbarprview.png&quot; tooltip=&quot;translateMe(EPG)&quot;</string>
+        </stringlist>
+       </property>
+      </widget>
+     </item>
+     <item alignment="Qt::AlignLeft">
+      <widget class="CSkinButton" name="VIEW_ID">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="popupMode">
+        <enum>QToolButton::InstantPopup</enum>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonIconOnly</enum>
+       </property>
+       <property name="skinImage" stdset="0">
+        <stringlist notr="true">
+         <string>src=&quot;img\tree\toolbar\toolbarview.png&quot; tooltip=&quot;translateMe(Switcher (EPG, Channel Settings))&quot;</string>
+        </stringlist>
+       </property>
+      </widget>
+     </item>
+     <item alignment="Qt::AlignLeft">
+      <widget class="CSkinButton" name="SEPARATOR_ID">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="text">
+        <string notr="true"/>
+       </property>
+       <property name="skinImage" stdset="0">
+        <stringlist notr="true">
+         <string>src=&quot;img\tree\toolbar\toolbarseparator.png&quot;</string>
+        </stringlist>
+       </property>
+      </widget>
+     </item>
+     <item alignment="Qt::AlignLeft">
+      <widget class="CSkinButton" name="TREE_START_SCAN_ID">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="popupMode">
+        <enum>QToolButton::InstantPopup</enum>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonIconOnly</enum>
+       </property>
+       <property name="skinImage" stdset="0">
+        <stringlist notr="true">
+         <string>src=&quot;img\tree\toolbar\toolbarscan.png&quot; tooltip=&quot;translateMe(Check selected channels)&quot;</string>
+        </stringlist>
+       </property>
+      </widget>
+     </item>
+     <item alignment="Qt::AlignLeft">
+      <widget class="CSkinButton" name="PARENT_PROTECT_ID">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonIconOnly</enum>
+       </property>
+       <property name="skinImage" stdset="0">
+        <stringlist notr="true">
+         <string>src=&quot;img\tree\toolbar\toolbarparent1.png&quot; tooltip=&quot;translateMe(Parental control)&quot;</string>
+         <string>src=&quot;img\tree\toolbar\toolbarparent2.png&quot; tooltip=&quot;translateMe(Parental control)&quot;</string>
+        </stringlist>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>0</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="0">
+    <layout class="QHBoxLayout" name="row2">
+     <property name="spacing">
+      <number>1</number>
+     </property>
+     <property name="sizeConstraint">
+      <enum>QLayout::SetMinAndMaxSize</enum>
+     </property>
+     <item>
+      <widget class="CComboBoxHelpers" name="COMBO_FILTER_ID">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="editable">
+        <bool>true</bool>
+       </property>
+       <property name="currentText">
+        <string notr="true"/>
+       </property>
+       <property name="maxVisibleItems">
+        <number>50</number>
+       </property>
+       <property name="insertPolicy">
+        <enum>QComboBox::InsertAtTop</enum>
+       </property>
+       <property name="sizeAdjustPolicy">
+        <enum>QComboBox::AdjustToMinimumContentsLength</enum>
+       </property>
+       <property name="placeholderText" stdset="0">
+        <string>Filter...</string>
+       </property>
+       <property name="haveDeleteButtons" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="CSkinButton" name="DELETE_FILTER_ID">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonIconOnly</enum>
+       </property>
+       <property name="skinImage" stdset="0">
+        <stringlist notr="true">
+         <string>src=&quot;img\tree\toolbar\delfilter.png&quot; tooltip=&quot;translateMe(Delete filter)&quot;</string>
+        </stringlist>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="CSkinButton" name="AUTO_FILTER_ID">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonIconOnly</enum>
+       </property>
+       <property name="skinImage" stdset="0">
+        <stringlist notr="true">
+         <string>src=&quot;img\tree\toolbar\autofilter1.png&quot; tooltip=&quot;translateMe(Enable autofilter)&quot;</string>
+         <string>checked=&quot;1&quot; src=&quot;img\tree\toolbar\autofilter2.png&quot; maxcount=&quot;1&quot; duration=&quot;0&quot; tooltip=&quot;translateMe(Disable autofilter)&quot;</string>
+        </stringlist>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0">
+    <layout class="QHBoxLayout" name="row3">
+     <property name="spacing">
+      <number>1</number>
+     </property>
+     <property name="topMargin">
+      <number>3</number>
+     </property>
+     <property name="rightMargin">
+      <number>2</number>
+     </property>
+     <property name="bottomMargin">
+      <number>2</number>
+     </property>
+     <item>
+      <widget class="CSkinButton" name="HIDE_SCAN_ID">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonIconOnly</enum>
+       </property>
+       <property name="skinImage" stdset="0">
+        <stringlist notr="true">
+         <string>src=&quot;img\tree\scanbar\hidebarscan.png&quot; tooltip=&quot;translateMe(Hide panel)&quot;</string>
+        </stringlist>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="CSkinButton" name="SEPARATOR_ID">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="text">
+        <string notr="true"/>
+       </property>
+       <property name="skinImage" stdset="0">
+        <stringlist notr="true">
+         <string>src=&quot;img\tree\toolbar\toolbarseparator.png&quot;</string>
+        </stringlist>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="CSkinButton" name="STOP_SCAN_ID">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonIconOnly</enum>
+       </property>
+       <property name="skinImage" stdset="0">
+        <stringlist notr="true">
+         <string>src=&quot;img\tree\scanbar\stopscan.png&quot; tooltip=&quot;translateMe(Stop scanning)&quot;</string>
+        </stringlist>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="CSkinButton" name="SEPARATOR_ID">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="text">
+        <string notr="true"/>
+       </property>
+       <property name="skinImage" stdset="0">
+        <stringlist notr="true">
+         <string>src=&quot;img\tree\toolbar\toolbarseparator.png&quot;</string>
+        </stringlist>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="CSkinButton" name="OPTION_SCAN_ID">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonIconOnly</enum>
+       </property>
+       <property name="skinImage" stdset="0">
+        <stringlist notr="true">
+         <string>src=&quot;img\tree\scanbar\optionscan.png&quot; tooltip=&quot;translateMe(Settings of scanning)&quot;</string>
+        </stringlist>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="CSkinButton" name="SHOW_ERROR_SCAN_ID">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonIconOnly</enum>
+       </property>
+       <property name="skinImage" stdset="0">
+        <stringlist notr="true">
+         <string>src=&quot;img\tree\scanbar\showerror.png&quot; tooltip=&quot;translateMe(Show not working channels list)&quot;</string>
+         <string>checked=&quot;1&quot; src=&quot;img\tree\scanbar\showerror1.png&quot; maxcount=&quot;1&quot; duration=&quot;0&quot; tooltip=&quot;translateMe(Show all)&quot;</string>
+        </stringlist>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="CSkinButton" name="SEPARATOR_ID">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="text">
+        <string notr="true"/>
+       </property>
+       <property name="skinImage" stdset="0">
+        <stringlist notr="true">
+         <string>src=&quot;img\tree\toolbar\toolbarseparator.png&quot;</string>
+        </stringlist>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>2</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QProgressBar" name="PROGRESS_SCAN_ID">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="value">
+        <number>24</number>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+       <property name="format">
+        <string notr="true">%p%</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CSkinButton</class>
+   <extends>QToolButton</extends>
+   <header>skinbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CTreeToolBar</class>
+   <extends>QWidget</extends>
+   <header>treetoolbar.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>CComboBoxHelpers</class>
+   <extends>QComboBox</extends>
+   <header>comboboxhelpers.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

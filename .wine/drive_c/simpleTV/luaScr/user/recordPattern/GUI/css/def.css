@@ -1,0 +1,241 @@
+
+.main-body {
+  background-color: #F0F0F0;
+  margin: 0;
+  padding: 0;  
+  min-width: 550px;
+ }
+.main-caption-div {
+   margin: 0;   
+   padding: 0;
+   background-color: #F0F0F0;
+   vertical-align: middle;
+   text-align:left;
+   padding-bottom: 6px;      
+ }
+ .header-left-div {
+   background-color: #F0F0F0;
+   float: left;
+ }
+ .header-container {
+ }
+ .main-caption-h {
+   margin-top: 0px;
+   margin-bottom: 5px;
+   margin-left: 60px;
+   display: block;
+ }
+/* switch*/  
+.label-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 22px;
+  
+}
+
+/* Hide default HTML checkbox */
+.label-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+/* The slider */
+.slider-switch {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .3s;
+}
+
+.slider-switch:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: .3s;
+}
+
+input:checked + .slider-switch {
+  background-color: #2196F3;
+}
+
+input:focus + .slider-switch {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider-switch:before {
+  transform: translateX(27px);
+}
+
+/* Rounded sliders */
+.slider-switch.round {
+  border-radius: 16px;
+}
+
+.slider-switch.round:before {
+  border-radius: 50%;
+}  
+
+ .main-header
+  {
+   position: fixed;
+   top: 0;
+   display: block;
+   z-index: 500;
+   width: 100%;
+   min-width: 560px;
+   }
+  .input-container
+  {
+    margin-top: 122px; 	
+  }
+ 
+  .toolbar {
+      background: #d1d7dc;
+	  padding-top: 8px;
+	  padding-bottom: 10px;
+	  padding-right: 8px;
+      padding-left: 8px;
+	  
+      display: block;
+      vertical-align: middle;
+	  overflow: hidden;
+	  width: 100%;	  
+	  white-space: nowrap;
+   }
+.toolbar-two-row   {
+ padding-top: 5px;
+}
+   
+ .toolbar-button {
+  background: #e8edff;
+  color: black;
+  border: 1px solid grey;
+  border-radius: 2px;  
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.15);
+  transition: all 0.2s ease-in-out;
+  
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  
+  cursor: pointer;  
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  outline: none;
+  position: relative;    
+  min-height: 16px;
+  max-height: 16px;
+ }
+ 
+ .toolbar-button-right {
+  position: absolute;
+  right: 10;
+ }
+ 
+ .toolbar-button::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  transition: opacity 0.2s ease-in-out;
+}
+  .toolbar-button:hover {
+  transform: scale(1.05, 1.05);
+}
+
+/* Fade in the pseudo-element with the bigger shadow */
+.toolbar-button:hover::after {
+  opacity: 1;
+}
+.toolbar-button-img
+ {
+  display: block;
+  float: left;
+  width:  18px;
+  height: 18px;
+ }
+ 
+ .toolbar-button-div
+  {
+   padding-left: 10px;
+  }
+ .toolbar-button-h
+  {
+   margin:0px;
+  }
+  
+.hr-gor {
+ display: block;
+ margin-top: 0.5em;
+ margin-bottom: 5px;
+}
+
+.div-preview {
+ margin-top: 6px;
+ display: block;
+ vertical-align: middle;
+ overflow: hidden;	  
+ white-space: nowrap;
+}
+
+.reload-button  {
+  width:  24px;
+  height: 24px;
+  margin-left: 2px;
+  padding: 2px 2px 2px 2px;
+  border: 1px solid #F0F0F0;
+  border-radius: 2px;  
+  cursor: pointer;  
+  float: left;
+  vertical-align:middle;
+}
+
+.reload-button:hover
+ {  
+  border: 1px solid black;
+  transition: all 0.2s ease-in-out;
+ } 
+ 
+.disable-select {
+  user-select: none;
+}
+
+.div-input {
+ margin-top: 10px; 
+}
+
+.label-input {  
+ font-weight: bold;
+ color: #669;
+}
+.input-pattern{ 
+ width: 100%; 
+ margin-top: 5px;
+ margin-bottom: 5px; 
+ padding-left: 4px;
+ padding-right: 4px;
+ padding-top: 3px;
+ padding-bottom: 3px;
+}
+.span-preview { 
+ margin-left: 10px; 
+ font-weight: bold; 
+ line-height: 27px;
+ color: black;
+}
+
+

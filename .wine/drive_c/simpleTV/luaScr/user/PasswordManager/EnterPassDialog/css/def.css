@@ -1,0 +1,88 @@
+
+.main-body {
+  background-color: #F0F0F0;
+  margin: 0;
+  padding: 0;
+}
+
+.editor-content {
+  background-color: #fefefe;
+}
+
+.editor-header {
+  padding: 2px 8px;
+  background-color: #d1d7dc;
+  color: white;
+}
+
+ /* Form*/	
+  
+  .form-continer {
+    padding: 10px 10px;
+   }
+  .editor-form {
+    margin-bottom: 0;
+  }
+ .editor-label-text {
+  font-size: 16px;
+   font-weight: bold;
+ }
+ .editor-input-text {
+  width: 100%;
+  display: block;
+  padding: 4px 4px;
+  margin: 8px 0px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+ .editor-input-submit {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 0px;
+  margin: 4px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.editor-input-submit:hover {
+  background-color: #45a049;
+}
+.editor-input-pass{  
+}
+.editor-input-pass-img {
+ z-index: 2; 
+ padding: 0 0px;
+ position: absolute;
+ top: 1px;
+ bottom: 1px;
+ left: auto;
+ right: 3px;
+ line-height: 25px;
+ display: inline-block;
+ cursor: pointer;
+ background: white;
+}
+
+.editor-input-pass-span {
+ display: block!important;
+ /*border: 1px solid #ccc;*/
+ /*border-radius: 4px;*/
+ position: relative;
+}
+input[type="password"] 
+ {
+ letter-spacing: 1px;
+ -webkit-text-security: disc;
+}
+
+.disable-select {
+  user-select: none;
+}
+
+
+

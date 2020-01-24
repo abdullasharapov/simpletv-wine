@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style type="text/css">
+* {
+font-family:Geneva, Arial, Helvetica, sans-serif;
+font-size:11px;
+}
+
+body {
+background-color:#F0F0F0;
+font-size:100%;
+color:#42454a;
+
+}
+
+a,img {
+border:none;
+outline:none;
+}
+
+
+#desc {
+padding-top:15px;
+padding-left:5px;
+padding-bottom:5px;
+font-weight:700;
+}
+
+.outtext {
+margin-left:5px;
+margin-top:5px;
+}
+
+.btn {
+width:100px;
+margin:10px;
+}
+
+ul#tabs {
+list-style-type:none;
+margin:20px 0 0;
+padding:0 0 .3em;
+}
+
+ul#tabs li {
+display:inline;
+}
+
+ul#tabs li a {
+color:#42454a;
+background-color:#efefef;
+border:1px solid #a6a6a6;
+border-bottom:none;
+text-decoration:none;
+padding:.3em;
+
+}
+
+ul#tabs li a:hover {
+background-color:#C2F0FF;
+}
+
+ul#tabs li a.selected {
+color:#000;
+background-color:#fff;
+border-bottom: 2px solid #fff;
+/*padding:.7em .3em .38em;*/
+}
+
+div.tabContent {
+border:1px solid #a6a6a6;
+background-color:#fff;
+padding:.5em;
+
+}
+
+div.tabContent.hide {
+display:none;
+}
+.hide {
+display:none;
+}
+
+.divscroll {
+width: 450px; 
+height: 300px;
+overflow-y: scroll;
+}
+
+.checkbox { 
+display: none;
+}
+
+.label {
+display: inline-block;
+vertical-align: middle;
+width: 16px;
+height: 16px;
+background: url('misc/fav_off.png') no-repeat;
+}
+
+.checkbox:checked + .label {
+background: url('misc/fav_on.png') no-repeat;
+}
+
+.label:hover:after{
+content: 'Add to OSD Favorites';
+display: block;
+position: relative;
+text-align: center;
+border: 1px solid #cccccc;
+background-color: #efefef;
+top: -20px;
+left: -110px;
+width: 110px;
+padding: 3px 3px;
+font-size: 11px;
+z-index: 9999;
+}
+
+    </style>
+
+
+  </head>
+  <body>
+
+<a href="http://plstonline.org/" title="http://plstonline.org/" target="_blank"><img src="misc/tv1.png"></a>
+
+<br>
+
+<fieldset><legend>Settings</a></legend>
+      <table border="0">
+         <tr>
+            <td width="250"><label for="AutoupdatTTVChk" title="Автообновление TTV плейлиста каждые 24 часа">Auto update TTV playlist every 24 hrs.</label></td>
+            <td><input id="AutoupdatTTVChk" type="checkbox"/></td>
+            <td></td>
+         </tr>
+      </table>
+</fieldset>
+
+<div id="desc">All available playlists loading from TV Playlists OSD menu.</br> Press 'Ctrl+Shift+X' hotkeys in main window to open it.</div>
+
+<div id="desc">Все доступные пейлисты загружаются из TV Playlists OSD меню.</br> Чтобы открыть меню нажмите 'Ctrl+Shift+X' в главном окне программы.</div>
+
+
+  </body>
+</html>

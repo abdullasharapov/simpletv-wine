@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ExtFilter</class>
+ <widget class="COsdExtFilter" name="ExtFilter">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>259</width>
+    <height>254</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="acceptDrops">
+   <bool>false</bool>
+  </property>
+  <property name="skinBackground" stdset="0">
+   <string notr="true">usetransparent=&quot;1&quot;  hideImageWhenTransparent=&quot;1&quot; can_glass=&quot;0&quot;  useSystemColorizationColor=&quot;0&quot;</string>
+  </property>
+  <property name="buttonsImage" stdset="0">
+   <stringlist notr="true">
+    <string>img\tree\selectall.png</string>
+   </stringlist>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>3</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <item row="2" column="0" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+    <widget class="CSkinButton" name="PANEL_DOWN_BUTTON_ID">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
+     </property>
+     <property name="text">
+      <string notr="true"/>
+     </property>
+     <property name="autoRepeat">
+      <bool>true</bool>
+     </property>
+     <property name="skinImage" stdset="0">
+      <stringlist>
+       <string>src=&quot;img\tree\paneldown.png&quot;</string>
+      </stringlist>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="CSkinPanel" name="SkinPanel">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="palette">
+      <palette>
+       <active>
+        <colorrole role="WindowText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>248</red>
+           <green>248</green>
+           <blue>248</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Text">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>247</red>
+           <green>247</green>
+           <blue>247</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </active>
+       <inactive>
+        <colorrole role="WindowText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>248</red>
+           <green>248</green>
+           <blue>248</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Text">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>247</red>
+           <green>247</green>
+           <blue>247</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </inactive>
+       <disabled>
+        <colorrole role="WindowText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>120</red>
+           <green>120</green>
+           <blue>120</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Text">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>120</red>
+           <green>120</green>
+           <blue>120</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </disabled>
+      </palette>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>9</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
+     </property>
+     <property name="acceptDrops">
+      <bool>true</bool>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>0</number>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <property name="showDropIndicator" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="dragEnabled">
+      <bool>true</bool>
+     </property>
+     <property name="dragDropMode">
+      <enum>QAbstractItemView::DragDrop</enum>
+     </property>
+     <property name="defaultDropAction">
+      <enum>Qt::IgnoreAction</enum>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::SingleSelection</enum>
+     </property>
+     <property name="textElideMode">
+      <enum>Qt::ElideNone</enum>
+     </property>
+     <property name="verticalScrollMode">
+      <enum>QAbstractItemView::ScrollPerPixel</enum>
+     </property>
+     <property name="horizontalScrollMode">
+      <enum>QAbstractItemView::ScrollPerPixel</enum>
+     </property>
+     <property name="uniformItemSizes">
+      <bool>true</bool>
+     </property>
+     <property name="selectionRectVisible">
+      <bool>false</bool>
+     </property>
+     <property name="skinItemSize" stdset="0">
+      <size>
+       <width>56</width>
+       <height>72</height>
+      </size>
+     </property>
+     <property name="skinBaseSize" stdset="0">
+      <size>
+       <width>56</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="skinImage" stdset="0">
+      <stringlist notr="true">
+       <string>src=&quot;img\tree\treeleftside2.png&quot;</string>
+       <string>src=&quot;img\tree\treeleftsidepress2.png&quot;</string>
+      </stringlist>
+     </property>
+     <property name="textRect" stdset="0">
+      <rect>
+       <x>0</x>
+       <y>50</y>
+       <width>55</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="textAlignment" stdset="0">
+      <number>132</number>
+     </property>
+     <property name="glow" stdset="0">
+      <string>glow=&quot;3.2&quot; color=&quot;0x901F1F40&quot;</string>
+     </property>
+     <property name="extTextRect" stdset="0">
+      <rect>
+       <x>0</x>
+       <y>38</y>
+       <width>52</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="extTextColor" stdset="0">
+      <color alpha="176">
+       <red>240</red>
+       <green>240</green>
+       <blue>240</blue>
+      </color>
+     </property>
+     <property name="glowExtText" stdset="0">
+      <string>glow=&quot;4&quot; color=&quot;0xC0101010&quot; samples=&quot;3&quot; indent=&quot;0&quot;</string>
+     </property>
+     <property name="extTextAlignment" stdset="0">
+      <number>2</number>
+     </property>
+     <property name="extTextFont" stdset="0">
+      <font>
+       <family>Arial</family>
+       <pointsize>8</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
+     </property>
+     <property name="imgRect" stdset="0">
+      <rect>
+       <x>8</x>
+       <y>8</y>
+       <width>40</width>
+       <height>40</height>
+      </rect>
+     </property>
+	 <property name="imageOverlay" stdset="0">
+      <string notr="true">img/tree/treeleftsideOverlay.png</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+    <widget class="CSkinButton" name="PANEL_UP_BUTTON_ID">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
+     </property>
+     <property name="contextMenuPolicy">
+      <enum>Qt::CustomContextMenu</enum>
+     </property>
+     <property name="text">
+      <string notr="true"/>
+     </property>
+     <property name="autoRepeat">
+      <bool>true</bool>
+     </property>
+     <property name="skinImage" stdset="0">
+      <stringlist>
+       <string>src=&quot;img\tree\panelup.png&quot;</string>
+      </stringlist>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CSkinButton</class>
+   <extends>QToolButton</extends>
+   <header>skinbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CSkinPanel</class>
+   <extends>QListView</extends>
+   <header>SkinPanel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>COsdExtFilter</class>
+   <extends>QWidget</extends>
+   <header>osdextfilter.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,35 @@
+﻿<playList>
+ 
+ <tree ui="forms\standaloneplst\tree.ui" >
+  <treeDelegate_EPG_No ui="forms\standaloneplst\tree_element_epg_no.ui" />
+  <treeDelegate_EPG_Bottom ui="forms\standaloneplst\tree_element_epg_bottom.ui" />  
+  <treeDelegate_EPG_Side ui="forms\standaloneplst\tree_element_epg_side.ui" />  
+  <treeDelegate_Group ui="forms\standaloneplst\tree_element_group.ui" />
+  <logo marginLeft="-5" marginRight="-5" marginTop="-5" marginBottom="-5">
+   <image name="default" src="img\tree\emptyLogo.png"/>
+   <image1 name="upperlayer" keepAspectRatio="0" src="\img\tree\frame2.png"/>
+   <image name="downlayer" keepAspectRatio="0" src="img\tree\bg1.png"/>    
+   <image name="downlayer_selectded" keepAspectRatio="0" src="img\tree\bg3.png"/> 
+   
+   <image name="playing" src="img\tree\play.png"/> 
+   <image name="error" src="img\tree\error.png"/>
+   <image name="check" src="img\tree\check.png"/> 
+   <image name="timer" src="img\tree\timer.png"/> 
+   <image name="protect" src="img\tree\protect.png"/>
+   <image name="unprotect" src="img\tree\unlock.png"/> 
+   <image name="timeshift" src="img\tree\timeshift.png"/>      
+  </logo>
+  <grouplogo>
+    <image name="downlayer" keepAspectRatio="1" src="img\tree\bg1.png"/>    
+	<image name="expand" keepAspectRatio="1" src="img\tree\expand.png"/>
+    <image name="notexpand" keepAspectRatio="1" src="img\tree\notexpand.png"/>    
+	<image name="protect" keepAspectRatio="1" src="img\tree\protect.png"/>
+    <image name="unprotect" keepAspectRatio="1" src="img\tree\unlock.png"/> 
+  </grouplogo>
+ </tree>
+ 
+ <extFilter ui="forms\standaloneplst\extfilter.ui" />
+ <mediaMode ui="forms\standaloneplst\mediamode.ui" />
+ <toolbar   ui="forms\standaloneplst\toolbar.ui" />
+</playList>
+

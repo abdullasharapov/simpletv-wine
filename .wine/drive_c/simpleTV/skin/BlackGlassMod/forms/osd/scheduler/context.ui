@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>m_Window</class>
+ <widget class="QFrame" name="m_Window">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>459</width>
+    <height>369</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="focusPolicy">
+   <enum>Qt::TabFocus</enum>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>4</number>
+   </property>
+   <property name="leftMargin">
+    <number>6</number>
+   </property>
+   <property name="topMargin">
+    <number>4</number>
+   </property>
+   <property name="rightMargin">
+    <number>6</number>
+   </property>
+   <property name="bottomMargin">
+    <number>10</number>
+   </property>
+   <item>
+    <widget class="COsdSelectTree" name="m_Tree">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::WheelFocus</enum>
+     </property>
+     <property name="contextMenuPolicy">
+      <enum>Qt::CustomContextMenu</enum>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#m_Tree {background-color: transparent;}
+QTreeView::indicator:unchecked{
+  image: url(_BASESKINPATH_/img/select/empty.png);
+ }
+QTreeView::indicator:checked {
+  image: url(_BASESKINPATH_/img/select/check.png);
+ }
+/*INCLUDE_UI_scrollbar.qss*/
+/*INCLUDE_UI_headerview.qss*/</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>1</number>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <property name="showDropIndicator" stdset="0">
+      <bool>false</bool>
+     </property>
+     <property name="verticalScrollMode">
+      <enum>QAbstractItemView::ScrollPerPixel</enum>
+     </property>
+     <property name="indentation">
+      <number>2</number>
+     </property>
+     <property name="uniformRowHeights">
+      <bool>false</bool>
+     </property>
+     <property name="sortingEnabled">
+      <bool>true</bool>
+     </property>
+     <property name="animated">
+      <bool>true</bool>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+     <property name="columnCount">
+      <number>6</number>
+     </property>
+     <property name="sliderInfo" stdset="0">
+      <string notr="true">color1=&quot;0x5010F010&quot; color2=&quot;0&quot; type=&quot;0&quot; roundcorner=&quot;0&quot; borderwidth=&quot;0&quot; bordercolor=&quot;0&quot;</string>
+     </property>
+     <property name="borderInfo" stdset="0">
+      <string notr="true">borderwidth=&quot;1&quot; roundcorner=&quot;0&quot; bordercolor=&quot;0x90808080&quot; </string>
+     </property>
+     <property name="cursorInfo" stdset="0">
+      <stringlist notr="true">
+       <string>id=&quot;focus&quot;  marginBottom=&quot;1&quot; marginTop=&quot;1&quot; type=&quot;0&quot; color1=&quot;0x7080A0FF&quot; roundcorner=&quot;0&quot; bordercolor=&quot;0xFF000000&quot; borderWidth=&quot;0&quot;</string>
+       <string>id=&quot;hover&quot; marginBottom=&quot;1&quot; marginTop=&quot;1&quot; type=&quot;0&quot; color1=&quot;0x3080A0FF&quot; roundcorner=&quot;0&quot; bordercolor=&quot;0xFF000000&quot; borderWidth=&quot;0&quot;</string>
+      </stringlist>
+     </property>
+     <attribute name="headerVisible">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="headerCascadingSectionResizes">
+      <bool>false</bool>
+     </attribute>
+     <column>
+      <property name="text">
+       <string notr="true">1</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string notr="true">2</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string notr="true">3</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string notr="true">4</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string notr="true">5</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string notr="true">6</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item>
+    <widget class="Line" name="line">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <property name="spacing">
+      <number>16</number>
+     </property>
+     <item>
+      <widget class="QPushButton" name="m_StopButton">
+       <property name="styleSheet">
+        <string notr="true">/*INCLUDE_UI_defaultbutton.qss*/</string>
+       </property>
+       <property name="text">
+        <string>PushButton</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="m_PauseButton">
+       <property name="styleSheet">
+        <string notr="true">/*INCLUDE_UI_defaultbutton.qss*/</string>
+       </property>
+       <property name="text">
+        <string>PushButton</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::MinimumExpanding</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>COsdSelectTree</class>
+   <extends>QTreeWidget</extends>
+   <header>OsdSelectTree.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

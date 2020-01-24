@@ -1,0 +1,277 @@
+WINE REGISTRY Version 2
+;; All keys relative to \\User\\S-1-5-21-0-0-0-1000
+
+#arch=win64
+
+[Control Panel\\Accessibility\\AudioDescription] 1579782945 996450
+#time=1d5d1e9a1e49ae2
+"Locale"=dword:00000000
+"On"="0"
+
+[Control Panel\\Accessibility\\Blind Access] 1579782945 983980
+#time=1d5d1e9a1e46a2c
+"On"="0"
+
+[Control Panel\\Accessibility\\Keyboard Preference] 1579782945 972590
+#time=1d5d1e9a1e43dae
+"On"="1"
+
+[Control Panel\\Accessibility\\ShowSounds] 1579782945 985970
+#time=1d5d1e9a1e471f2
+"On"="0"
+
+[Control Panel\\Colors] 1579782945 3069450
+#time=1d5d1e9a2043c8a
+
+[Control Panel\\Desktop] 1579782945 995350
+#time=1d5d1e9a1e49696
+"ActiveWndTrackTimeout"=dword:00000000
+"BlockSendInputResets"="0"
+"CaretWidth"=dword:00000001
+"ClickLockTime"=dword:000004b0
+"DoubleClickHeight"="4"
+"DoubleClickWidth"="4"
+"DragFullWindows"="0"
+"DragHeight"="4"
+"DragWidth"="4"
+"FocusBorderHeight"=dword:00000001
+"FocusBorderWidth"=dword:00000001
+"FontSmoothing"="2"
+"FontSmoothingGamma"=dword:00000000
+"FontSmoothingOrientation"=dword:00000001
+"FontSmoothingType"=dword:00000001
+"ForegroundFlashCount"=dword:00000003
+"ForegroundLockTimeout"=dword:00000000
+"IconTitleWrap"="1"
+"LowPowerActive"="0"
+"MenuShowDelay"="400"
+"UserPreferencesMask"=hex:30,00,00,80,10,00,00,00
+"Wallpaper"=""
+"WheelScrollChars"="3"
+"WheelScrollLines"="3"
+
+[Control Panel\\Desktop\\WindowMetrics] 1579782945 994510
+#time=1d5d1e9a1e4934e
+"BorderWidth"="-15"
+"CaptionHeight"="-270"
+"CaptionWidth"="-270"
+"IconSpacing"="-1125"
+"IconTitleWrap"="1"
+"IconVerticalSpacing"="-1125"
+"MenuHeight"="-270"
+"MenuWidth"="-270"
+"PaddedBorderWidth"="0"
+"ScrollHeight"="-240"
+"ScrollWidth"="-240"
+"SmCaptionHeight"="-225"
+"SmCaptionWidth"="-225"
+
+[Control Panel\\International] 1579782945 754370
+#time=1d5d1e9a1e0e942
+"iCalendarType"="1"
+"iCountry"="1"
+"iCurrDigits"="2"
+"iCurrency"="0"
+"iDate"="0"
+"iDigits"="2"
+"iFirstDayOfWeek"="6"
+"iFirstWeekOfYear"="0"
+"iLDate"="0"
+"iLZero"="1"
+"iMeasure"="1"
+"iNegCurr"="0"
+"iNegNumber"="1"
+"iPaperSize"="1"
+"iTime"="0"
+"iTimePrefix"="0"
+"iTLZero"="0"
+"Locale"="00000409"
+"LocaleName"="en-US"
+"Numshape"="1"
+"s1159"="AM"
+"s2359"="PM"
+"sCountry"="United States"
+"sCurrency"="$"
+"sDate"="/"
+"sDecimal"="."
+"sGrouping"="3;0"
+"sLanguage"="ENU"
+"sList"=","
+"sLongDate"="dddd, MMMM dd, yyyy"
+"sMonDecimalSep"="."
+"sMonGrouping"="3;0"
+"sMonThousandSep"=","
+"sNativeDigits"="0123456789"
+"sNegativeSign"="-"
+"sPositiveSign"=""
+"sShortDate"="M/d/yyyy"
+"sThousand"=","
+"sTime"=":"
+"sTimeFormat"="h:mm:ss tt"
+"sYearMonth"="MMMM, yyyy"
+
+[Control Panel\\International\\Geo] 1579782945 744510
+#time=1d5d1e9a1e0c2be
+"Nation"="244"
+
+[Control Panel\\Keyboard] 1579782945 973580
+#time=1d5d1e9a1e4418c
+"KeyboardDelay"="1"
+"KeyboardSpeed"="31"
+
+[Control Panel\\Mouse] 1579782945 994730
+#time=1d5d1e9a1e4942a
+"ActiveWindowTracking"=dword:00000000
+"DoubleClickHeight"="4"
+"DoubleClickSpeed"="500"
+"DoubleClickWidth"="4"
+"MouseHoverHeight"="4"
+"MouseHoverTime"="400"
+"MouseHoverWidth"="4"
+"MouseSensitivity"="10"
+"MouseSpeed"="1"
+"MouseThreshold1"="6"
+"MouseThreshold2"="10"
+"SnapToDefaultButton"="0"
+"SwapMouseButtons"="0"
+
+[Control Panel\\Sound] 1579782945 930250
+#time=1d5d1e9a1e3984a
+"Beep"="Yes"
+
+[Environment] 1579782948 5500560
+#time=1d5d1e9a3f31890
+"TEMP"="C:\\users\\root\\Temp"
+"TMP"="C:\\users\\root\\Temp"
+
+[Keyboard Layout\\Preload] 1579782945 2613030
+#time=1d5d1e9a1fd45a6
+"1"="00000409"
+
+[Software\\Microsoft\\Internet Explorer\\Main\\FeatureControl] 1579782947 9707500
+#time=1d5d1e9a39ab36c
+
+[Software\\Microsoft\\SystemCertificates\\CA\\Certificates] 1579783636 1362220
+#time=1d5d1eb3dc86b2c
+
+[Software\\Microsoft\\SystemCertificates\\CA\\CRLs] 1579783636 1362940
+#time=1d5d1eb3dc86dfc
+
+[Software\\Microsoft\\SystemCertificates\\CA\\CTLs] 1579783636 1363420
+#time=1d5d1eb3dc86fdc
+
+[Software\\Microsoft\\SystemCertificates\\My\\Certificates] 1579783636 1368720
+#time=1d5d1eb3dc88490
+
+[Software\\Microsoft\\SystemCertificates\\My\\CRLs] 1579783636 1368990
+#time=1d5d1eb3dc8859e
+
+[Software\\Microsoft\\SystemCertificates\\My\\CTLs] 1579783636 1369250
+#time=1d5d1eb3dc886a2
+
+[Software\\Microsoft\\SystemCertificates\\ROOT\\Certificates] 1579783636 1044930
+#time=1d5d1eb3dc393c2
+
+[Software\\Microsoft\\SystemCertificates\\ROOT\\CRLs] 1579783636 1045790
+#time=1d5d1eb3dc3971e
+
+[Software\\Microsoft\\SystemCertificates\\ROOT\\CTLs] 1579783636 1046210
+#time=1d5d1eb3dc398c2
+
+[Software\\Microsoft\\SystemCertificates\\Trust\\Certificates] 1579783636 1370970
+#time=1d5d1eb3dc88d5a
+
+[Software\\Microsoft\\SystemCertificates\\Trust\\CRLs] 1579783636 1371220
+#time=1d5d1eb3dc88e54
+
+[Software\\Microsoft\\SystemCertificates\\Trust\\CTLs] 1579783636 1371460
+#time=1d5d1eb3dc88f44
+
+[Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders] 1579782948 5364710
+#time=1d5d1e9a3f105e6
+"Administrative Tools"="C:\\users\\root\\Start Menu\\Programs\\Administrative Tools"
+"AppData"="C:\\users\\root\\Application Data"
+"Cache"="C:\\users\\root\\Local Settings\\Temporary Internet Files"
+"Cookies"="C:\\users\\root\\Cookies"
+"Desktop"="C:\\users\\root\\Desktop"
+"Favorites"="C:\\users\\root\\Favorites"
+"Fonts"="C:\\windows\\Fonts"
+"History"="C:\\users\\root\\Local Settings\\History"
+"Local AppData"="C:\\users\\root\\Local Settings\\Application Data"
+"My Music"="C:\\users\\root\\My Music"
+"My Pictures"="C:\\users\\root\\My Pictures"
+"My Videos"="C:\\users\\root\\My Videos"
+"NetHood"="C:\\users\\root\\NetHood"
+"Personal"="C:\\users\\root\\My Documents"
+"PrintHood"="C:\\users\\root\\PrintHood"
+"Programs"="C:\\users\\root\\Start Menu\\Programs"
+"Recent"="C:\\users\\root\\Recent"
+"SendTo"="C:\\users\\root\\SendTo"
+"Start Menu"="C:\\users\\root\\Start Menu"
+"StartUp"="C:\\users\\root\\Start Menu\\Programs\\StartUp"
+"Templates"="C:\\users\\root\\Templates"
+"{374DE290-123F-4565-9164-39C4925E467B}"="C:\\users\\root\\Downloads"
+"{4C5C32FF-BB9D-43B0-B5B4-2D72E54EAAA4}"="C:\\users\\root\\Saved Games"
+"{56784854-C6CB-462B-8169-88E350ACB882}"="C:\\users\\root\\Contacts"
+"{7D1D3A04-DEBB-4115-95CF-2F29DA2920DA}"="C:\\users\\root\\Searches"
+"{A520A1A4-1780-4FF6-BD18-167343C5AF16}"="C:\\users\\root\\AppData\\LocalLow"
+"{BFB9D5E0-C6A9-404C-B2B2-AE6DB6AF4968}"="C:\\users\\root\\Links"
+
+[Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders] 1579782948 5364190
+#time=1d5d1e9a3f103de
+"Administrative Tools"=str(2):"%USERPROFILE%\\Start Menu\\Programs\\Administrative Tools"
+"AppData"=str(2):"%USERPROFILE%\\Application Data"
+"Cache"=str(2):"%USERPROFILE%\\Local Settings\\Temporary Internet Files"
+"Cookies"=str(2):"%USERPROFILE%\\Cookies"
+"Desktop"=str(2):"%USERPROFILE%\\Desktop"
+"Favorites"=str(2):"%USERPROFILE%\\Favorites"
+"Fonts"=str(2):"C:\\windows\\Fonts"
+"History"=str(2):"%USERPROFILE%\\Local Settings\\History"
+"Local AppData"=str(2):"%USERPROFILE%\\Local Settings\\Application Data"
+"My Music"=str(2):"%USERPROFILE%\\My Music"
+"My Pictures"=str(2):"%USERPROFILE%\\My Pictures"
+"My Videos"=str(2):"%USERPROFILE%\\My Videos"
+"NetHood"=str(2):"%USERPROFILE%\\NetHood"
+"Personal"=str(2):"%USERPROFILE%\\My Documents"
+"PrintHood"=str(2):"%USERPROFILE%\\PrintHood"
+"Programs"=str(2):"%USERPROFILE%\\Start Menu\\Programs"
+"Recent"=str(2):"%USERPROFILE%\\Recent"
+"SendTo"=str(2):"%USERPROFILE%\\SendTo"
+"Start Menu"=str(2):"%USERPROFILE%\\Start Menu"
+"StartUp"=str(2):"%USERPROFILE%\\Start Menu\\Programs\\StartUp"
+"Templates"=str(2):"%USERPROFILE%\\Templates"
+"{374DE290-123F-4565-9164-39C4925E467B}"=str(2):"%USERPROFILE%\\Downloads"
+"{4C5C32FF-BB9D-43B0-B5B4-2D72E54EAAA4}"=str(2):"%USERPROFILE%\\Saved Games"
+"{56784854-C6CB-462B-8169-88E350ACB882}"=str(2):"%USERPROFILE%\\Contacts"
+"{7D1D3A04-DEBB-4115-95CF-2F29DA2920DA}"=str(2):"%USERPROFILE%\\Searches"
+"{A520A1A4-1780-4FF6-BD18-167343C5AF16}"=str(2):"%USERPROFILE%\\AppData\\LocalLow"
+"{BFB9D5E0-C6A9-404C-B2B2-AE6DB6AF4968}"=str(2):"%USERPROFILE%\\Links"
+
+[Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings] 1579783629 8694130
+#time=1d5d1eb3a0c2df2
+"ProxyEnable"=dword:00000000
+"User Agent"="Mozilla/4.0 (compatible; MSIE 8.0; Win32)"
+
+[Software\\Wine\\Fonts] 1579814481 8692640
+#time=1d5d2330f45c220
+"Codepages"="1252,437"
+"LogPixels"=dword:00000060
+
+[Software\\Wine\\Fonts\\External Fonts] 1579814481 8699450
+#time=1d5d2330f45dcba
+"@Microsoft Yahei (TrueType)"="Z:\\opt\\wine-staging\\share\\wine\\fonts\\msyh.ttf"
+"Arial (TrueType)"="Z:\\opt\\wine-staging\\share\\wine\\fonts\\arial.ttf"
+"Courier New (TrueType)"="Z:\\opt\\wine-staging\\share\\wine\\fonts\\cour.ttf"
+"DejaVu Sans (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\dejavu\\DejaVuSans.ttf"
+"DejaVu Sans Bold (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\dejavu\\DejaVuSans-Bold.ttf"
+"DejaVu Sans Mono (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\dejavu\\DejaVuSansMono.ttf"
+"DejaVu Sans Mono Bold (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\dejavu\\DejaVuSansMono-Bold.ttf"
+"DejaVu Serif (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\dejavu\\DejaVuSerif.ttf"
+"DejaVu Serif Bold (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\dejavu\\DejaVuSerif-Bold.ttf"
+"Marlett (TrueType)"="Z:\\opt\\wine-staging\\share\\wine\\fonts\\marlett.ttf"
+"Microsoft Yahei (TrueType)"="Z:\\opt\\wine-staging\\share\\wine\\fonts\\msyh.ttf"
+"Symbol (TrueType)"="Z:\\opt\\wine-staging\\share\\wine\\fonts\\symbol.ttf"
+"Tahoma (TrueType)"="Z:\\opt\\wine-staging\\share\\wine\\fonts\\tahoma.ttf"
+"Tahoma Bold (TrueType)"="Z:\\opt\\wine-staging\\share\\wine\\fonts\\tahomabd.ttf"
+"Times New Roman (TrueType)"="Z:\\opt\\wine-staging\\share\\wine\\fonts\\times.ttf"
+"Wingdings (TrueType)"="Z:\\opt\\wine-staging\\share\\wine\\fonts\\wingding.ttf"

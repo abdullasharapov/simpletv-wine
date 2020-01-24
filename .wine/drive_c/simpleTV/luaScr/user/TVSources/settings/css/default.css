@@ -1,0 +1,382 @@
+* {
+		background-color: transparent;
+		color:#000000;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 11px;
+}
+html, body {
+         background-color:#f0f0f0;
+}
+
+.button {
+		font: 8pt;
+		cursor:pointer;
+		vertical-align: middle;
+		text-align: center; 
+}
+
+.checkbox {
+		cursor:pointer;  vertical-align: middle;
+}
+
+.textfield {
+		border: 1px solid #6f6767;
+        margin-bottom:0px;
+		padding:1px;
+				margin: 2px;
+}
+.numfield {
+		border: 1px solid #6f6767;
+        margin-left: 4px;
+        margin-right: 2px;
+        margin-bottom: 0px;
+		padding: 2px;
+		width: 24px;
+}
+
+.fileselect {
+		/* filter: alpha(opacity: 0); */
+		/* opacity: 0; */
+		/* position: relative; */
+		width: 220px;
+		border: 1px solid #6f6767;
+		/* margin-top: 2px; */
+		padding: 0px;
+		margin: 2px;
+		/*background-color: transparent; */
+		z-index: 3;
+}
+.tabs {
+       background-color: #f0f0f0;
+       padding:  0px;  margin: 0px; 
+       height: 16px; 
+}
+ul.tabs {    
+        margin-left: 0px;
+		margin-top:7px;
+        margin-bottom:0px;
+		padding:0px;
+		position:relative;
+		z-index:2;
+}
+ul.tabs li {
+        list-style:none;
+        display:inline;
+        background-color:#f6f6f6;
+        color:#656565;
+		padding:4px 4px 4px 4px; 
+		margin:0px 1px 0px 0px;
+        text-decoration:none;
+        font-size:8px;
+        font-family:Verdana, Arial, Helvetica, sans-serif;
+        font-weight:bold;
+        text-transform:uppercase;
+        border:1px solid #777777; 
+		border-radius: 3px 3px 0px 0px;
+		cursor:pointer;
+}
+ul.tabs li:hover, li:focus {
+        background-color:#f9fff9;  /* поверх табов */
+        color:#282e32;
+}
+ul.tabs li.active {
+        background-color:#fefefe;
+        color:#282e32;
+		border-width:1px;
+        border-color:#464c54;
+		border-bottom:1px solid transparent;
+}
+
+
+ul.select  {
+		margin-left: 0px;
+		margin-top: 0px;
+        margin-bottom:0px;
+		padding:0px;
+		position:relative;
+		cursor:pointer;
+		z-index:4;
+}
+ul.select li {
+		position:absolute;
+        list-style:none;
+       /* background: url(img/select_row.png);
+		background-position: right bottom;*/
+        color:#2f343a;
+        background-color:#ffffff; 
+		padding:4px 4px 4px 4px; /* Верх, лево, низ, право */
+        text-decoration:none;
+        font-size:10px;
+        font-family: Arial, Helvetica, sans-serif;
+        border: 1px solid #464c54; 
+		z-index:7; 
+}
+ul.select li:hover, li:focus {
+        color:#f5f5f5;
+        background-color:#727E8C;
+        border: 1px solid #000000; 
+}
+
+
+.content {
+        background-color:#fefefe;
+        padding-top:10px;
+        border:1px solid #464c54;
+		position:relative;
+		top:0px;
+		left:0px;
+		width:468px;
+		height:445px;
+		z-index:1;
+}
+/*
+.content2 {
+        background-color:#fefefe;
+        padding:5px;
+        border:1px solid #464c54;
+		position:absolute;
+		top:50px;
+		left:9px;
+		width:450px;
+		height:250px;
+		z-index:7;
+}
+*/
+
+ /* ----- filters and sources and Information content------*/
+
+.content3 {
+        background-color:#fefefe;
+        padding:0px;
+        border:1px solid #464c54;
+		position: relative;
+		top:0px;
+		left:0px;
+		width:468px;
+		height:450px;
+		z-index:1;
+}
+ /* ----- filters begin------*/
+.content31 {
+        background-color: transparent;
+        padding:0px;
+        border-top:0px solid #464c54;
+		position:absolute;
+		top:10px;
+		width:467px;
+		height:100%;
+		left:0px;
+		z-index:3;
+}
+.content4 {
+        background-color: transparent;
+        padding:0px;
+        border:0px solid #464c54;
+		position:absolute;
+		top:14px;
+		left:0px;
+		width:467px;
+		height:413px;
+		overflow-y: scroll; /*справа скрол*/
+        overflow-x: hidden;
+		z-index:5;
+}
+
+.filter_unused	{ color: Gray; font-weight: bold;  }
+.filter_used 	{ color: Red; font-weight: bold; }
+.filter_exist	{ color: LimeGreen; font-weight: bold;}
+.filter_favor	{ color: DarkOrange; font-weight: bold;}
+
+.tablelist {
+	width: 450px; /* Ширина таблицы */
+    background-color: #ffffff;  /* Цвет фона  строк */
+    border: 1px solid #fefefe;  /* Рамка вокруг таблицы */
+    border-collapse: collapse; /* Убираем двойные линии между ячейками */
+	height:220px;
+	margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+.tablelist input {
+    width:204px; /*  от этого зависит ширина ячейки */ 
+    
+}
+
+.tablelist  TD, .tablelist TH {
+    padding: 0px; /* Поля вокруг содержимого ячейки */
+	text-align: center;
+}
+.tablelist  TD {
+    text-align: center; /* Выравнивание по центру */
+    border-bottom: 1px solid #c7c7c7; /* Линия внизу ячейки */
+}
+.tablelist tr {
+    color: white; /* Цвет текста */
+}
+
+.FilterLoading {
+  text-align: center; color: #909090; width: 100%; height:100%; font-size: 1.2em;  display: block;
+}
+.BtnSaveFilter {
+	 position: absolute; top: -8px; right: 2px; 
+	 background-color: transparent;
+	 z-index:7; 
+ }
+ .iBtnSave { background-color: inherit;}
+ .img_filter_up{ position: absolute; left: 0px; top: -7px; border-bottom: 1px solid #464c54; z-index:5;}
+ 
+ /* ----- filters end------*/
+
+.content5 {
+        background-color:#fefefe; 
+        padding:0px;
+        border:0px;
+		position:absolute;
+		top: 0px;
+		left:0px;
+		width:120px;
+		height:425px;
+		z-index:3;
+}
+
+.SourcesSelectCombo {
+		position: absolute;
+		left: 0px; 
+		top: 2px;
+		padding:2px;		
+		font-size: 12px;
+		cursor:pointer;
+		width: 130px; 
+		z-index:6;		
+}
+.SourcesSelectList {
+	position: absolute; 
+	left: 0px; 
+	top: 26px;	
+    overflow-y:auto; 
+	margin: 0px;
+	padding:2px;
+	border-right: 1px ridge #464c54;
+	width: 100px; 
+	height: 99%;
+	z-index:1;
+}
+
+/* список источников */
+.SelectOption { font-size:1.2em; }
+
+.content6 {
+       background-color:#fefefe; 
+        padding:0px;
+        border:0px;
+		position:absolute;
+		top: 0px;
+		left: 0px;
+		width: 468px;
+		height: 26px;
+		z-index:4;
+}
+.content7 {
+      	margin: 0px; 
+      	padding: 0px;
+        background-color: #fefefe;  
+        border: 1px;
+		overflow-y:auto; /*справа скрол*/
+		position:absolute;
+		top: 24px;
+		left:100px;
+		width: 368px;
+		height:414px;		
+		z-index:4;
+}
+.tableSources {
+    margin: 10px 0px 0px 4px;
+  	padding: 0px ;
+    background-color: #fefefe; 
+    border-collapse: collapse; /* Убираем двойные линии между ячейками */
+	width: 92%;    
+}
+.tableSources  td {
+    padding: 0px; /* Поля вокруг содержимого ячейки */
+    
+}
+
+#toggler {  text-decoration: none;  color: gold;}
+#toggler:hover {  color: red;    }
+
+.SrcLogo {  
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	width: 24px;
+	height: 24px;
+	border: 2px solid #D5E0F5;
+	background-color: #C0D0F0;
+}
+.btn_folder { vertical-align: middle; display: inline;  padding: 0px;  margin: 0px; width:22px;  height:16px; background: url('../img/btn_folder.png') no-repeat; }
+.btn_folder:hover{ background: url('../img/btn_folder_hover.png') no-repeat; }
+.btn_select { width:7px; background: url('../img/btn_select.png') no-repeat; }
+.btn_select:hover{  background: url('../img/btn_select_click.png') no-repeat; }
+
+.ChangeLog {
+        background-color: palegoldenrod;
+        word-wrap:  break-word;
+        word-break: break-all;
+        padding: 5px;
+        border: 1px solid #464c54;
+		overflow-y: auto; /*справа скрол*/
+		position: absolute;
+		top: 180px;
+		left:11px;
+		width: 93%;
+		height:246px;
+
+}
+
+fieldset { padding: 2px 3px 2px 3px; }
+
+.highlight {
+	font-weight:bold;
+}
+.moved{
+	color: gray;
+	font: italic 8px sans-serif;
+}
+
+.d-butts  {
+        margin: 0px; padding: 0px;
+		display: table;
+		height: 24px;
+		}
+.d-butts span {
+		display: table-cell;
+		width: 21px;
+        height: 21px;
+		cursor: pointer;
+		zoom: 1; 		
+        *display:inline; /*ie 7 trick */
+}
+.d-butts-span-1  { background-image: url('../img/btn_delete.png');  background-repeat: no-repeat; }
+.d-butts-span-2  { background-image: url('../img/btn_add.png');    background-repeat: no-repeat;  }
+
+
+.save-box-wrap {
+  display: none;  
+  position: fixed; 
+  margin: 0px; padding: 0px;
+  width:100%;
+  height:100%;
+  align-items: center;
+  justify-content: center;
+  z-index:  999;
+}
+
+.save-box {
+  width: 8em;
+  padding: 1.5em;
+  font-size: 1.5em;
+  border-radius: 6px;
+  color: rgb(255,255,255); 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.8); 
+  text-align: center;
+}

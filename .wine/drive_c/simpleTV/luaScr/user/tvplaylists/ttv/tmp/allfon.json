@@ -1,0 +1,73 @@
+{"channels":[
+{"name":"24 ДОК","url":"97409747c26ff26a3af4eaf3602a1202e19e7345","cat":"allfon"}
+,{"name":"2x2","url":"6ed1aec36fd11f4bdbc6e0e972dacf9262a62a7a","cat":"allfon"}
+,{"name":"5 канал","url":"17d32f83ffeb2d3598223ca2be46a5ea54809403","cat":"allfon"}
+,{"name":"A1","url":"ae9d6403434e9ed032c2ee05a502ca9728738069","cat":"allfon"}
+,{"name":"A2","url":"06c4ec07bdf90be2475ae759abb98f67189ec64a","cat":"allfon"}
+,{"name":"Ani","url":"e36fb5e63d8b8f1cd4d6f8782c66b26fa11d2e15","cat":"allfon"}
+,{"name":"National Geographic","url":"c84b5da467ae31ba8182b650df108994160bccb3","cat":"allfon"}
+,{"name":"Nickelodeon","url":"8b81f47bb436be2a28bfe911501e7f6023bfa969","cat":"allfon"}
+,{"name":"Paramount Comedy","url":"e506fa05ba2f66c94a131b0f4ca958c4ee43e5f1","cat":"allfon"}
+,{"name":"Russia Today","url":"0630c32002df0cf6530f8bd6ce8b602943ae074e","cat":"allfon"}
+,{"name":"TiJi","url":"393b5761d4b115c20fec982cabb4a29747890bc8","cat":"allfon"}
+,{"name":"Travel+Adventure","url":"caae7b2997509069d12eb7379b837a383f967a8e","cat":"allfon"}
+,{"name":"TV1000 Русское кино","url":"2d3529bb91e4ba2470d10cbe59843c20c6bbaeef","cat":"allfon"}
+,{"name":"Viasat Explore","url":"5b1617e68db90a80d5584bedf6dca332f991b02b","cat":"allfon"}
+,{"name":"Авто Плюс","url":"4b4f7984a5b4fda136fd855cc17042cab970a7d0","cat":"allfon"}
+,{"name":"Бобёр","url":"c1724c4da3380a1da3ac452abcd25bda9aff6cd0","cat":"allfon"}
+,{"name":"Вопросы и ответы","url":"61c60d2196400f581b9c37622ec01b041c379d73","cat":"allfon"}
+,{"name":"Время","url":"01ebe0ac4f24b062d566b04a2894f2d27ead47f8","cat":"allfon"}
+,{"name":"Дом кино","url":"cd100b39af426dff1500ad40a6bef8651cf2f499","cat":"allfon"}
+,{"name":"Домашний","url":"d5e8a74e5b927c8a9a4b6479bc55cbb1574cf4ee","cat":"allfon"}
+,{"name":"Драйв","url":"b1ded7ba109dcd1d5c8eac5841ece878d432c25b","cat":"allfon"}
+,{"name":"Живая планета","url":"a50b87c746cea6641272cfb98aebf7476651fbd8","cat":"allfon"}
+,{"name":"Звезда","url":"7bff41fc6c3e612e61d1304bdf82a2d41ee86df4","cat":"allfon"}
+,{"name":"Иллюзион +","url":"80ad37120aaae4de225ea1de59f1da6f433da002","cat":"allfon"}
+,{"name":"История","url":"3a82af2ddb0f8781ba71891943937bd44599d0c0","cat":"allfon"}
+,{"name":"Канал Disney","url":"92b8d2ed96f05ad9c9615fe301a87bd986602a76","cat":"allfon"}
+,{"name":"Кино ТВ","url":"6540aa017064640ed284b069179881ca89b1ba3d","cat":"allfon"}
+,{"name":"Кинокомедия","url":"7e0f6951ee2207aa0db79610b02a0a56ef133a1b","cat":"allfon"}
+,{"name":"Киномикс","url":"317eddf7b55118867a00a31a937915c9fc16c702","cat":"allfon"}
+,{"name":"Киносерия","url":"bcf0004a4380c835730a4eaa197d80ba09b9fb08","cat":"allfon"}
+,{"name":"КХЛ","url":"efb59354b0a0dd3bac851005b5bb97e550de438a","cat":"allfon"}
+,{"name":"Матч Премьер","url":"db29d36eb96e046e978b6a3fd1575486da84661a","cat":"allfon"}
+,{"name":"Матч ТВ","url":"6eee00cb511890a17689d6646034fbee85b95ce8","cat":"allfon"}
+,{"name":"Матч! Арена","url":"344d83ca6feade86c0cb65075d1528fc1f929916","cat":"allfon"}
+,{"name":"Матч! Боец","url":"5240f03072a310e7d0d5c8291c492889fa313d70","cat":"allfon"}
+,{"name":"Матч! Игра","url":"e94dcef9296efb47cdac0ad43984683057850eed","cat":"allfon"}
+,{"name":"МАТЧ! Футбол 1","url":"1185aa7a299676771c0e63b3805e96d85b37eb90","cat":"allfon"}
+,{"name":"МАТЧ! Футбол 2","url":"8c9b26ec0e44e1a81a6be46ab40594b1e66bd50f","cat":"allfon"}
+,{"name":"МАТЧ! Футбол 3","url":"16de8da9d69b234e50bb29a83342a8c8b36e731e","cat":"allfon"}
+,{"name":"Мир Сериала","url":"4cce6052cd98a703bb85c034c4915184a96ecd18","cat":"allfon"}
+,{"name":"Моя Планета","url":"619758415422fc41570a5ecb199cab99951dca22","cat":"allfon"}
+,{"name":"Мужское Кино","url":"5c1a8f859c4cf3ca6c6d714591d17088848b3a6d","cat":"allfon"}
+,{"name":"МУЛЬТ","url":"4917a093b97bafaf5150f9bafd91c67e119eef45","cat":"allfon"}
+,{"name":"Наука","url":"9b42c4346bef64e708b6174af0c17ec6936bfb11","cat":"allfon"}
+,{"name":"Наше Новое Кино","url":"ea9eee01fa559e4c1f27eef2a485088db408b38f","cat":"allfon"}
+,{"name":"НСТ","url":"86bb648b1210caabe0de7d7175fdda19c8c0c485","cat":"allfon"}
+,{"name":"НТВ","url":"1f6942610d2d3500facee35be29bc5b8fb5c098c","cat":"allfon"}
+,{"name":"Охота и рыбалка","url":"989e1a5beb9c356acf608c1635e0d04bd07af5c5","cat":"allfon"}
+,{"name":"Парк развлечений","url":"77c8b71e0449746a47a4f36597f25d8c84940766","cat":"allfon"}
+,{"name":"Первый","url":"fd344eeb5b5fc1d6f40a95f809748e05b2880082","cat":"allfon"}
+,{"name":"Психология 21","url":"ba7fd7ac0a6a8b5250002a3c9b72ea7a9bb4b39a","cat":"allfon"}
+,{"name":"Пятница","url":"c68a55e4253a126f8f1f20fde237c2fea6bacafb","cat":"allfon"}
+,{"name":"РЕН ТВ","url":"d3c636da0fdeccff411f8bea48e5abae3c458d8e","cat":"allfon"}
+,{"name":"Ретро ТВ","url":"170bf12701fe73b2c686d0af86cf5f50f0bb566d","cat":"allfon"}
+,{"name":"Родное кино","url":"df27fd8ef5dec61d1a78a76889e62c82a9ad299b","cat":"allfon"}
+,{"name":"Россия 1","url":"06f1ad579dff1965b52c6c40aeef71886b3a2c47","cat":"allfon"}
+,{"name":"Россия 24","url":"c1d220baa50482d4b4b6641d43eb8700341f8168","cat":"allfon"}
+,{"name":"РТВ - Любимое кино","url":"e6a9e7932737d524a5157ad620fac77a46d2ad6c","cat":"allfon"}
+,{"name":"Русский бестселлер","url":"d6a9b933738b633103659b19d8a8a502d3ec14e4","cat":"allfon"}
+,{"name":"Русский детектив","url":"8bbd44d6685987150280a5e26e9eeded80b45f6f","cat":"allfon"}
+,{"name":"Русский Иллюзион","url":"b1dd237128fbaf2aa92900a5d1e188665efc7957","cat":"allfon"}
+,{"name":"Русский роман","url":"7586759389d6429b12258f2ad3cde8d76e2b5d26","cat":"allfon"}
+,{"name":"Санкт-Петербург","url":"865d9f811a14e4d1f791de4b49f0245b9378358b","cat":"allfon"}
+,{"name":"СТС","url":"066a16a3825064e0a8ec87b3a5e8d94039e4f399","cat":"allfon"}
+,{"name":"СТС Love","url":"7fd0c663975c01a12aa79a5c73882e0d24e4b995","cat":"allfon"}
+,{"name":"ТВ Центр","url":"9c60489aae39969121c8421197f5d3e15ec874c3","cat":"allfon"}
+,{"name":"ТВ3","url":"5a05c03e670e3ce2f0d18cc250826cd5685d24fb","cat":"allfon"}
+,{"name":"Техно 24","url":"f78d867cd29136c2bb715302943bbdfd5dd70448","cat":"allfon"}
+,{"name":"ТНТ","url":"bfc5e8ddcbf315bcbba5ba249f4daa180283b5ea","cat":"allfon"}
+,{"name":"ТНТ4","url":"a9ec0fc9bd58b48adb485c09308ec6a32382dabc","cat":"allfon"}
+,{"name":"Че","url":"5312ea536d290a57fbc1c85c05d5464068df7fd7","cat":"allfon"}
+]}

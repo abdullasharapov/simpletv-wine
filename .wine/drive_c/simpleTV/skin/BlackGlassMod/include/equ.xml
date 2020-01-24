@@ -1,0 +1,162 @@
+<EQ>
+  <background src="img\eq_main.png" setcx="1" setcy="1" usetransparent="1" can_glass="1" useSystemColorizationColor="1" hideColorizationWhenGlass="1" hideAllWhenGlass="0"  hideImageWhenTransparent="0" colorizationColorMinAlpha="0.65" type="0" color1="0x90808080"  />
+  <resizeinfo resizeable="0" />
+     
+ <node class="BUTTON" id="CLOSE_EQ_BUTTON_ID" typeAlign="3" cx="16" cy="17" x="8" y="2">
+   <image isalpha="0" src="img\CloseButton.png" tooltip="translateMe(Close)" />      
+ </node>
+ 
+ <node class="BUTTON" id="EQU_ONOFF_BUTTON_ID" checkable="1" typeAlign="1" cx="54" cy="53" x="14" y="70">
+   <image isalpha="0" src="img\equonoffbutton.png" tooltip="translateMe(EQ off)"  />
+   <image isalpha="0" checked="1" src="img\equonoffbuttonActive.png" tooltip="translateMe(EQ on)" />
+ </node>
+ 
+ <node class="BUTTON" id="EQU_TYPE_BUTTON_ID" checkable="1" typeAlign="0x0101" cx="32" cy="31" x="3" y="28">
+   <image isalpha="0" src="img\equType0button.png" />
+   <image isalpha="0" checked="1" src="img\equType1button.png" />
+ </node>
+  
+ <node class="SLIDER" id="SLIDER_PREAMP_ID" vertical="1" typeAlign="1" cx="18" cy="117" x="72" y="37">
+   <imagecursor isalpha="0" duration="400" statecount="2" right="18" bottom="8" src="img\EqSliderCursor.png"/>      
+   <minmax min="0" max="400" />   
+   <holdinfo>
+    <point value="200" threshold="10" />
+   </holdinfo>
+ </node>
+ 
+ <node class="SLIDER" id="SLIDER_W60_ID" vertical="1" typeAlign="1" cx="18" cy="117" x="112" y="37">
+   <imagecursor isalpha="0" duration="400" statecount="2" right="18" bottom="8" src="img\EqSliderCursor.png"/>      
+   <minmax min="0" max="400" />   
+   <holdinfo>
+    <point value="200" threshold="10" />
+   </holdinfo>
+ </node>
+ 
+ <node class="SLIDER" id="SLIDER_W170_ID" vertical="1" typeAlign="1" cx="18" cy="117" x="132" y="37">
+   <imagecursor isalpha="0" duration="400" statecount="2" right="18" bottom="8" src="img\EqSliderCursor.png"/>      
+   <minmax min="0" max="400" />   
+   <holdinfo>
+    <point value="200" threshold="10" />
+   </holdinfo>
+ </node>
+ 
+ <node class="SLIDER" id="SLIDER_W310_ID" vertical="1" typeAlign="1" cx="18" cy="117" x="152" y="37">
+   <imagecursor isalpha="0" duration="400" statecount="2" right="18" bottom="8" src="img\EqSliderCursor.png"/>      
+   <minmax min="0" max="400" />   
+   <holdinfo>
+    <point value="200" threshold="10" />
+   </holdinfo>
+ </node>
+ 
+ <node class="SLIDER" id="SLIDER_W600_ID" vertical="1" typeAlign="1" cx="18" cy="117" x="172" y="37">
+   <imagecursor isalpha="0" duration="400" statecount="2" right="18" bottom="8" src="img\EqSliderCursor.png"/>      
+   <minmax min="0" max="400" />   
+   <holdinfo>
+    <point value="200" threshold="10" />
+   </holdinfo>
+ </node>
+ 
+ <node class="SLIDER" id="SLIDER_W1K_ID" vertical="1" typeAlign="1" cx="18" cy="117" x="192" y="37">
+   <imagecursor isalpha="0" duration="400" statecount="2" right="18" bottom="8" src="img\EqSliderCursor.png"/>      
+   <minmax min="0" max="400" />   
+   <holdinfo>
+    <point value="200" threshold="10" />
+   </holdinfo>
+ </node>
+ 
+ <node class="SLIDER" id="SLIDER_W3K_ID" vertical="1" typeAlign="1" cx="18" cy="117" x="212" y="37">
+   <imagecursor isalpha="0" duration="400" statecount="2" right="18" bottom="8" src="img\EqSliderCursor.png"/>      
+   <minmax min="0" max="400" />   
+   <holdinfo>
+    <point value="200" threshold="10" />
+   </holdinfo>
+ </node>
+ 
+  <node class="SLIDER" id="SLIDER_W6K_ID" vertical="1" typeAlign="1" cx="18" cy="117" x="232" y="37">
+   <imagecursor isalpha="0" duration="400" statecount="2" right="18" bottom="8" src="img\EqSliderCursor.png"/>      
+   <minmax min="0" max="400" />   
+   <holdinfo>
+    <point value="200" threshold="10" />
+   </holdinfo>
+  </node>
+ 
+  <node class="SLIDER" id="SLIDER_W12K_ID" vertical="1" typeAlign="1" cx="18" cy="117" x="252" y="37">
+   <imagecursor isalpha="0" duration="400" statecount="2" right="18" bottom="8" src="img\EqSliderCursor.png"/>      
+   <minmax min="0" max="400" />   
+   <holdinfo>
+    <point value="200" threshold="10" />
+   </holdinfo>
+  </node>
+ 
+  <node class="SLIDER" id="SLIDER_W14K_ID" vertical="1" typeAlign="1" cx="18" cy="117" x="272" y="37">
+   <imagecursor isalpha="0" duration="400" statecount="2" right="18" bottom="8" src="img\EqSliderCursor.png"/>      
+   <minmax min="0" max="400" />   
+   <holdinfo>
+    <point value="200" threshold="10" />
+   </holdinfo>
+  </node>
+ 
+  <node class="SLIDER" id="SLIDER_W16K_ID" vertical="1" typeAlign="1" cx="18" cy="117" x="292" y="37">
+   <imagecursor isalpha="0" duration="400" statecount="2" right="18" bottom="8" src="img\EqSliderCursor.png"/>      
+   <minmax min="0" max="400" />   
+   <holdinfo>
+    <point value="200" threshold="10" />
+   </holdinfo>
+  </node>
+    
+  <node class="STATIC" id="PREAMP_TEXT_ID" typeAlign="1" cx="18" cy="17" x="72" y="154">
+   <text aligment="0x84" color="0xFF404040"/>
+   <font name="Arial" height="8" bold="1" />
+ </node>
+ 
+ <node class="STATIC" id="W60_TEXT" typeAlign="1" cx="18" cy="17" x="112" y="154" xb="0" yb="0">
+   <text aligment="0x84" color="0xFF404040"/>
+   <font name="Arial" height="8" bold="1" />
+ </node>
+ 
+  <node class="STATIC" id="W170_TEXT" typeAlign="1" cx="18" cy="17" x="132" y="154" xb="0" yb="0">
+   <text aligment="0x84" color="0xFF404040"/>
+   <font name="Arial" height="8" bold="1" />
+ </node>
+
+ <node class="STATIC" id="W310_TEXT" typeAlign="1" cx="18" cy="17" x="152" y="154" xb="0" yb="0">
+   <text aligment="0x84" color="0xFF404040"/>
+   <font name="Arial" height="8" bold="1" />
+ </node>
+ 
+ <node class="STATIC" id="W600_TEXT" typeAlign="1" cx="18" cy="17" x="172" y="154" xb="0" yb="0">
+   <text aligment="0x84" color="0xFF404040"/>
+   <font name="Arial" height="8" bold="1" />
+ </node>
+ 
+ <node class="STATIC" id="W1K_TEXT" typeAlign="1" cx="18" cy="17" x="192" y="154" xb="0" yb="0">
+   <text aligment="0x84" color="0xFF404040"/>
+   <font name="Arial" height="8" bold="1" />
+ </node>
+ 
+ <node class="STATIC" id="W3K_TEXT" typeAlign="1" cx="18" cy="17" x="212" y="154" xb="0" yb="0">
+   <text aligment="0x84" color="0xFF404040"/>
+   <font name="Arial" height="8" bold="1" />
+ </node>
+ 
+ <node class="STATIC" id="W6K_TEXT" typeAlign="1" cx="18" cy="17" x="232" y="154" xb="0" yb="0">
+   <text aligment="0x84" color="0xFF404040"/>
+   <font name="Arial" height="8" bold="1" />
+ </node>
+ 
+ <node class="STATIC" id="W12K_TEXT" typeAlign="1" cx="18" cy="17" x="252" y="154" xb="0" yb="0">
+   <text aligment="0x84" color="0xFF404040"/>
+   <font name="Arial" height="8" bold="1" />
+ </node>
+ 
+ <node class="STATIC" id="W14K_TEXT" typeAlign="1" cx="18" cy="17" x="272" y="154" xb="0" yb="0">
+   <text aligment="0x84" color="0xFF404040"/>
+   <font name="Arial" height="8" bold="1" />
+ </node>
+ 
+ <node class="STATIC" id="W16K_TEXT" typeAlign="1" cx="18" cy="17" x="292" y="154" xb="0" yb="0">
+   <text aligment="0x84" color="0xFF404040"/>
+   <font name="Arial" height="8" bold="1" />
+ </node>
+  
+</EQ>

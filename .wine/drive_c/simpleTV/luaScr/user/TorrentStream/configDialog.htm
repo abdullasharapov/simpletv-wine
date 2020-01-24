@@ -1,0 +1,53 @@
+﻿<html>
+<head>
+<style type="text/css">
+ * {
+   font-family:  Geneva, Arial, Helvetica, sans-serif;
+   font-size: 11px;   
+    }
+#CMyHtmlDialog td {
+                  padding-left : 5px;
+                  }
+   .buttonstyle
+   {     
+     cursor:pointer;
+     display:inline;
+        border: 1px solid #777;
+        padding: 0 1.5em;
+        margin: 0.5em;
+     }
+   
+   .outtext
+   {
+    font-size: 11px;   
+        width: 280px;
+    }
+    .style1
+    {
+    }
+
+</style>
+</head>
+<body id="CMyHtmlDialog" bgcolor="#F0F0F0">
+<fieldset ><legend>Настройки для <a  target="_blank" href="http://acestream.org/">Ace Stream</a></legend>
+<table  width="450" >
+<tr><td class="style1">Папка engine</td><td style="white-space: nowrap"><input class="outtext" id="Path" type="text"/><input id="ButtonFolderPicker" type="button" value="... "/></td></tr>
+<tr><td class="style1">Параметры engine</td><td><input class="outtext" id="Params" type="text"/></td></tr>
+<tr><td class="style1">Авто запуск</td><td><input id="AutoStart" type="checkbox" /></td></tr>
+<tr><td class="style1">Авто завершение</td><td><select id="AutoEnd"><option value="0">Нет</option><option value="1">Если запущен из SimpleTV</option><option value="2">Всегда</option></select></td></tr>
+<tr><td class="style1">Адрес</td><td><input class="outtext" id="Address" type="text"/> </td></tr>
+<tr><td class="style1">Порт</td><td><input class="outtext" id="Port" type="text"/></td></tr>
+<tr><td class="style1">Разрешить показ необязательной рекламы</td><td><input id="CheckboxAD" type="checkbox" /></td></tr>
+<tr><td class="style1">Не показывать рекламу (экспериментально)</td><td><input id="CheckboxAA1" type="checkbox" /></td></tr>
+<tr><td class="style1">Опции для пропуска рекламы</td><td><input id="ADTextOptions" class="outtext" type="text" /></td></tr>
+<tr><td class="style1">Разрешить менять<br/>название каналов</td><td><input id="AllowChangeName" type="checkbox" /></td></tr>
+<tr><td class="style1">Показывать дополнительную информацию на OSD</td><td><input id="AllowShowName" type="checkbox" /></td></tr>
+<tr><td class="style1">Использовать demux=avcodec для mkv / avi</td><td><input id="UseAVCODECForMkvAvi" type="checkbox"/><div style="display: inline;overflow: hidden;">Включите эту опцию если Acestream чрезмерно нагружает процессор(возможно не будут работать mkv субтитры)</div></td></tr>
+<tr><td height="60" class="style1"></td><td align="left" valign="middle"><input  id="ButtonDef" type="button" value="Сбросить настройки"/></td></tr>
+
+</table>
+</fieldset>
+    
+
+</body>
+</html>

@@ -1,0 +1,459 @@
+
+.main-body {
+  background-color: #F0F0F0;
+  margin: 0;
+  padding: 0;  
+  min-width: 470px;
+}
+.main-caption-div {
+   margin: 0;
+   padding: 0;
+   width:100%;
+   background-color: #F0F0F0;
+   text-align: center;
+   vertical-align: middle;
+   padding-bottom: 6px;
+ }
+ 
+ .main-caption-h {
+   margin: auto;
+ }
+.table-sources{
+    /*font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;*/
+    /*font-size: 14px;*/
+    background: white;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    margin: 0 auto 20px;
+	table-layout: fixed;
+	overflow: hidden;
+ }
+  .table-header{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 14px;
+    background: #3284ad;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    margin: 0 auto 10px;
+	table-layout: fixed;
+ }
+  
+ .table-sources thead {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+    display: block;
+    overflow: auto;
+    width: 100%;
+  }
+ 
+ .table-header tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+    display: block;
+    overflow: auto;
+    width: 100%;
+  }
+ 
+ .table-sources th {
+    /*font-size: 14px;*/
+    font-weight: normal;
+    color: #039;
+    border-bottom: 2px solid #6678b1;
+    padding: 10px 8px;
+  }
+ 
+ .table-header th {
+   /* font-size: 15px;*/
+    font-weight: normal;    
+	color: #d5e4ec;
+	border-top: 2px solid #6678b1;
+    border-bottom: 2px solid #6678b1;
+    padding: 10px 8px;
+  }
+ 
+ .table-sources tr:hover {
+    background-color: #F8F8F8;
+   }
+
+   .table-sources td {
+    border-bottom: 1px solid #ccc;
+    color: #669;
+    padding: 5px 8px;
+}
+
+  .table-sources td {
+    transition: .3s linear;
+   }
+ 
+  .table-sources tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit; 
+	}
+ 
+  td, th {
+    display: table-cell;
+    vertical-align: inherit;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+  }
+  
+  .main-header
+  {
+   position: fixed;
+   top: 0;
+   display: block;
+   z-index: 500;
+  }
+  .logins-container
+  {
+    margin-top: 126px; 
+  }
+ 
+ .toolbar {
+      background: #d1d7dc;
+	  padding-top: 8px;
+	  padding-bottom: 10px;
+	  padding-right: 15px;
+      padding-left: 15px;
+      display: block;
+      vertical-align: middle;
+	  overflow: hidden;
+	  width: 100%;
+	  min-width: 430px;
+	  white-space: nowrap;
+	  overflow: hidden;
+   }
+   
+ .toolbar-button {
+  background: #e8edff;
+  color: black;
+  border: 1px solid grey;
+  border-radius: 2px;  
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.15);
+  transition: all 0.2s ease-in-out;
+  
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  
+  cursor: pointer;  
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  outline: none;
+  position: relative;  
+ }
+ 
+ .toolbar-button-right {
+  position: absolute;
+  right: 10;
+ }
+ 
+ .toolbar-button::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  transition: opacity 0.2s ease-in-out;
+}
+  .toolbar-button:hover {
+  transform: scale(1.05, 1.05);
+}
+
+/* Fade in the pseudo-element with the bigger shadow */
+.toolbar-button:hover::after {
+  opacity: 1;
+}
+.toolbar-button-img
+ {
+  display: block;
+  float: left;
+  width:  20px;
+  height: 20px;
+ }
+ 
+ .toolbar-button-div
+  {
+   padding-left: 10px;
+  }
+ .toolbar-button-h
+  {
+   margin:0px;
+  }
+    
+ .cell-button
+ {
+  width:  20px;
+  height: 20px;
+  margin-left: 2px;
+  padding: 2px 2px 2px 2px;
+  border: 1px solid white;
+  border-radius: 2px;  
+  cursor: pointer;  
+ }
+ 
+ .cell-button:hover
+ {  
+  border: 1px solid grey;
+  transition: all 0.2s ease-in-out;
+ }
+	
+ /* editor */
+.all-area-window {
+  display: none;  
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  padding-top: 60px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  
+  animation-name: animatebackground;
+  animation-duration: 0.4s;
+}
+
+/* Editor content */
+.editor-content {
+  background-color: #fefefe;
+  padding: 0;
+  margin: auto;
+  border: 1px solid #888;
+  width: 85%;
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animateright;
+  animation-duration: 0.4s;
+}
+/* Add Animation */
+
+@keyframes animatebackground {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+@keyframes animateright {
+  from {left: 500px; opacity: 0}
+  to {left: 0; opacity: 1}
+}
+@keyframes animatetop {
+  from {top: -400px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+@keyframes animateopacity {
+  from {transform: scale(0.3); opacity: 0}
+  to {transform: scale(1);  opacity: 1}
+}
+
+.editor-header {
+  padding: 2px 16px;
+  background-color: #d1d7dc;
+  color: white;
+}
+
+/* The Close Button */
+.modal-close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 30px;
+  font-weight: bold;
+}
+.modal-close:hover,
+.modal-close:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}	
+ /* Form*/	
+  
+  .form-continer {
+    padding: 10px 10px;
+   }
+  .editor-form {
+    margin-bottom: 0;
+  }
+ .editor-label-text {
+  font-size: 16px;
+   font-weight: bold;
+ }
+ .editor-input-text {
+  width: 100%;
+  display: block;
+  padding: 4px 4px;
+  margin: 8px 0px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.editor-input-submit:hover {
+  background-color: #45a049;
+}
+.editor-input-pass{  
+}
+.editor-input-pass-img {
+ z-index: 2; 
+ padding: 0 0px;
+ position: absolute;
+ top: 1px;
+ bottom: 1px;
+ left: auto;
+ right: 3px;
+ line-height: 25px;
+ display: inline-block;
+ cursor: pointer;
+ background: white;
+}
+
+.editor-input-pass-span {
+ display: block!important;
+ /*border: 1px solid #ccc;*/
+ /*border-radius: 4px;*/
+ position: relative;
+}
+
+input[type="password"] 
+ {
+ letter-spacing: 1px;
+ -webkit-text-security: disc;
+}
+
+
+ .editor-input-submit {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 0px;
+  margin: 4px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* editor */
+.pref-all-area-window {
+  display: none;  
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  padding-top: 40px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  
+  animation-name: animatebackground;
+  animation-duration: 0.4s;
+}
+
+/* Pref content */
+.pref-content {
+  background-color: #fefefe;
+  padding: 0;
+  margin: auto;
+  border: 1px solid #888;
+  width: 85%;
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatepreftop;
+  animation-duration: 0.4s
+}
+/* Add Animation */
+
+@keyframes animatepreftop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+
+.pref-header {
+  padding: 2px 16px;
+  background-color: #d1d7dc;
+  color: white;
+}
+.pref-form-continer{
+ padding: 20px 20px;
+}
+  
+.pref-form {
+    margin-bottom: 0;
+  }
+  
+.check-container {
+  display: block;
+  position: relative;
+  padding-left: 40px;
+  padding-top: 2px;
+  margin-bottom: 14px;
+  cursor: pointer;
+  font-size: 18px;
+  /*font-weight: bold;*/
+  font-family: Verdana,sans-serif;
+  user-select: none;
+}
+
+.check-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.pref-checkmark{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.check-container:hover input ~ .pref-checkmark {
+  background-color: #ccc;
+}
+/* When the radio button is checked, add a blue background */
+.check-container  input:checked ~ .pref-checkmark {
+  background-color: #2196F3;
+}
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.pref-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.check-container  input:checked ~ .pref-checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.check-container  .pref-checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+.disable-select {
+  user-select: none;
+}
+

@@ -1,0 +1,93 @@
+﻿<HTML>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="css/def.css">
+<script src="jscript/def.js"></script>
+</head>
+
+<body class="main-body">
+ <div class="main-header disable-select">
+  <div class="header-container">
+  <div class="header-left-div">
+  <label class="label-switch">
+    <input type="checkbox" id="enabledId" onchange="updateEnabled();">
+   <span class="slider-switch round"></span>
+  </label>
+  </div>
+  <div class="main-caption-div"><h3 class="main-caption-h" id="mainCaptionText"></h3></div>        
+  </div>
+ <div class="toolbar">   
+   <div class="toolbar-button" onClick='addVar("CHANNEL_NAME");' onMouseDown="return false;">     
+	     <h5 class="toolbar-button-h" id="toollBarButtonCnannelName"></h5>
+   </div>     
+   <div class="toolbar-button" onClick='addVar("\"CHANNEL_GROUP\"");' onMouseDown="return false;">     
+	     <h5 class="toolbar-button-h" id="toollBarButtonGroupName"></h5>
+   </div>     
+   <div class="toolbar-button" onClick='addVar("\"CHANNEL_EXTFILTER\"");' onMouseDown="return false;">     
+	     <h5 class="toolbar-button-h" id="toollBarButtonExtFilterName"></h5>
+   </div>     
+      
+   <div class="toolbar-button" onClick='addVar("CURRENT_TIME");' onMouseDown="return false;">     
+	     <h5 class="toolbar-button-h" id="toollBarButtonTime"></h5>
+   </div>     
+   <div class="toolbar-button" onClick='addVar("\"TIMESHIFT_OFFSET\"");' onMouseDown="return false;">     
+	     <h5 class="toolbar-button-h" id="toollBarButtonTimeshift"></h5>
+   </div>     
+   <div class="toolbar-button-right toolbar-button" onClick="resetToDefaults();">
+     <img class="toolbar-button-img" src="Img/Reset.png">
+	   <div class="toolbar-button-div">
+	     <h5 class="toolbar-button-h" id="toollBarButtonReset"></h5>
+	   </div>   
+   </div>
+  <!-- 2 row--> 
+  <div class="toolbar-two-row">
+   <div class="toolbar-button" onClick='addVar("\"EPG_TITLE\"");' onMouseDown="return false;">     
+	     <h5 class="toolbar-button-h" id="toollBarButtonEpgTitle"></h5>
+    </div> 
+   <div class="toolbar-button" onClick='addVar("\"EPG_CAT\"");' onMouseDown="return false;">     
+	     <h5 class="toolbar-button-h" id="toollBarButtonEpgCat"></h5>
+   </div>    
+   <div class="toolbar-button" onClick='addVar("\"EPG_START\"");' onMouseDown="return false;">     
+	     <h5 class="toolbar-button-h" id="toollBarButtonEpgStart"></h5>
+   </div>    
+   <div class="toolbar-button" onClick='addVar("\"EPG_END\"");' onMouseDown="return false;">     
+	     <h5 class="toolbar-button-h" id="toollBarButtonEpgEnd"></h5>
+   </div>    
+   </div>
+ </div> 
+ </div> 
+
+ <div class="input-container"> 
+ <div class="div-input">
+  <label class="disable-select label-input" id="labelRecordPatern">
+   <input type="text" class="input-pattern" id="inputRecordPattern" tabindex="0">
+   <div class="div-preview">
+   <img class='reload-button disable-select' src='Img/Reload.png' onclick="reloadRecPreview()"/>
+    <span class="span-preview" id="preViewRec"></span>
+	</div>
+  </label>
+ </div> 
+ <hr class="hr-gor">
+ <div class="div-input">
+  <label class="disable-select label-input" id="labelSnapshotPatern">
+   <input type="text" class="input-pattern" id="inputSnapshotPattern">
+   <div class="div-preview">
+   <img class='reload-button disable-select' src='Img/Reload.png' onclick="reloadSnapPreview()"/>
+    <span class="span-preview" id="preViewSnap"></span>
+	</div>
+  </label>
+ </div>
+ <hr class="hr-gor">
+ <div class="div-input">
+  <label class="disable-select label-input" id="labelTimePatern">
+   <input type="text" class="input-pattern" id="inputTimePattern">
+   <div class="div-preview">
+   <img class='reload-button disable-select' src='Img/Reload.png' onclick="reloadTimePreview()"/>
+    <span class="span-preview" id="preViewTime"></span>
+	</div>
+  </label>
+ </div>  
+ </div>  
+
+</BODY>
+</HTML>

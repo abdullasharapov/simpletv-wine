@@ -1,0 +1,22 @@
+--stats
+--no-media-library
+--network-caching=500
+--file-caching=500
+--no-osd
+--no-sub-autodetect
+--drop-late-frames
+--skip-frames
+#--ffmpeg-skip-idct=4
+#--ffmpeg-skiploopfilter=4
+--avcodec-skip-idct=4
+--avcodec-skiploopfilter=4
+#--http-reconnect
+--verbose=0
+#--no-audio 
+--vout=dummy
+--aout=dummy
+#--http-user-agent=simpleTV/0.4.8
+--http-user-agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.82 Safari/537.36 OPR/39.0.2256.48
+--no-disable-screensaver 
+
+

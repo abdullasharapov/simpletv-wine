@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>m_Window</class>
+ <widget class="QWidget" name="m_Window">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>599</width>
+    <height>439</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="COsdImage" name="m_CentralContainer" native="true">
+     <property name="imageParams" stdset="0">
+      <string notr="true">type=&quot;dir&quot; count=&quot;8&quot; delay=&quot;75&quot; src=&quot;img\load\circle2\cuu%1.png&quot;</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="CSkinOneLineText" name="m_Text">
+        <property name="text">
+         <string notr="true">$BUFFERINGPEERS</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="needValidateText" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="addheight" stdset="0">
+         <number>1</number>
+        </property>
+        <property name="glow" stdset="0">
+         <string notr="true">glow=&quot;5&quot; samples=&quot;5&quot; color=&quot;0x50000000&quot;</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CSkinOneLineText</class>
+   <extends>QLabel</extends>
+   <header>skinonelinetext.h</header>
+  </customwidget>
+  <customwidget>
+   <class>COsdImage</class>
+   <extends>QWidget</extends>
+   <header>osdimage.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

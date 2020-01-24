@@ -1,0 +1,2 @@
+--sout=#duplicate{dst=std{access=file,mux=ts,dst=$RECFILE}}
+ts

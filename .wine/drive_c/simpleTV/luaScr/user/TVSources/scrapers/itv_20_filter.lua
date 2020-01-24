@@ -1,0 +1,23 @@
+local filter = {
+	{'REN-TV HD', 'РЕН ТВ HD'},
+	{'Доверие', 'Москва. Доверие'},
+	{'Общественное телевидение России', 'ОТР'},
+	{'360 Подмосковье HD', '360 Подмосковье HD (Москва)'},
+	{'Русский экстрим', 'Russian Extreme'},
+	{'BOLT', 'BOLT HD'},
+	{'Star Cinema', 'Star Cinema'},
+	{'Star Cinema HD', 'Star Cinema HD'},
+	{"Star Cinema (Россия)","Star Cinema HD"},
+	{'Star Family', 'Star Family'},
+	{'Star Family HD', 'Star Family HD'},
+	{'Деда Мороза', 'Телеканал Деда Мороза'},
+	{'5 канал', 'Пятый канал'},
+	{'Sony Entertainment Television HD', 'Sony Channel HD'},
+	{'REN-TV', 'РЕН ТВ'},
+	{'MTV', 'MTV Russia'},
+	{'Телекомпания ПЯТНИЦА', 'Пятница!'},
+	{"О%2C кино!","О!Кино"},
+	{"О, кино!","О!Кино"},
+	{"О!КИНО","О!Кино"},
+	}
+return filter 

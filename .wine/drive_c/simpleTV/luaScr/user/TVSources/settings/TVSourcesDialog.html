@@ -1,0 +1,666 @@
+<!DOCTYPE html> 
+<HTML lang="en">
+<head>
+<title>TVSources</title>
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<link rel="stylesheet"  href="css/default.css" />
+<link rel="stylesheet"  href="css/my_local.css" />
+<link rel="stylesheet"  href="my_local.css" />
+
+<script  src="jscripts/main.js"></script>
+
+</head>
+
+<BODY id="CMyHtmlDialog" >
+<div id="wrapper" style="padding:0px; margin:0px; background-color:#f0f0f0; border: 0px solid black;">
+<!-- Technical inputs -->
+<!--  visibility:hidden; -->
+<input id="LangForm"  type="text" size="6"  style="visibility:hidden; position: absolute; right: 0px; top: 0px"  />
+<input id="idCHList"  type="text" size="6"  style="visibility:hidden; position: absolute; right: 160px; top: 0px"/>
+<input id="idGRList"  type="text" size="6"  style="visibility:hidden; position: absolute; right: 160px; top: 0px"/>
+<input id="idGCList"  type="text" size="6"  style="visibility:hidden; position: absolute; right: 160px; top: 0px"/>
+<input id="idCHCount" type="text" size="2"  style="visibility:hidden; position: absolute; right: 60px; top: 0px" />
+<input id="idGRCount" type="text" size="2"  style="visibility:hidden; position: absolute; right: 40px; top: 0px"/>
+<input id="idCGCount" type="text" size="2"  style="visibility:hidden; position: absolute; right: 20px; top: 0px"/>
+<input id="idTest"    type="text" size="20" style="visibility:hidden; position: absolute; right: 0px; top: 20px" />
+
+<!-- Main body -->
+<div id="idHead" style="background-color: inherit; text-align:center; padding-bottom:2px; "></div>
+
+<div id="idTabs"   ></div>
+
+<!-- Main -->	
+<div id="content_1" class="content" style="display:none;" > 
+	<table style="width: 450px;" >
+	<tr class="highlight">
+		<td>Language</td>
+		<td colspan="3"><div id="LangList"></div></td>
+	</tr>
+
+	<tr>
+		<td><div id="idInfoButton"></div></td>
+		<td colspan="3"><input id="CheckboxInfoButton" type="checkbox" class="checkbox"/></td>
+	</tr>
+	<tr class="highlight">
+		<td><div id="idDFSource"></div></td>
+		<td colspan="3"><input id="DFSource" type="text" class="textfield"/></td>
+	</tr>
+	<tr>
+		<td><div id="idNoSignal"></div></td>
+		<td colspan="3"><input id="CheckboxNoSignal" type="checkbox" class="checkbox"/></td>
+	</tr>
+	<tr> 
+	   <td colspan="4">
+				<fieldset style="width: 450px;">
+				<legend id="idLegendAutoCh">  </legend> 
+				    <table>
+						<tr class="highlight">
+							<td><div id="idNextSr"></div></td> <td><input id="CheckboxNextSr" type="checkbox" class="checkbox"/></td>
+						</tr>
+						<tr class="highlight" title = "Valid: 5..60 seconds. Default: 15 sec.">
+							<td><div   id="idChWait"></div></td> <td><input id="ChWait" type="text" class="numfield">s.</td>
+						</tr>	
+						<tr class="highlight">
+							<td><div id="idLastPlay"></div></td> <td><input id="CheckboxLastPlay" type="checkbox" class="checkbox"/></td>
+						</tr>
+						<tr title = "Valid: 1..50 times. Default: 1">
+							<td><div   id="idErrRep"></div></td> <td><input id="ErrRep" type="text" class="numfield"></td>
+						</tr>			
+					</table>
+				</fieldset>	
+	    </td>
+	</tr>
+	
+	<tr >
+		<td ><div id="idLogging"></div></td>
+		<td style="width: 29px;" ><input id="CheckboxLogging" type="checkbox" class="checkbox"  /></td>
+		<td colspan="2"> <div id="BtnClearLog" ></div></td> 
+	</tr>
+</table>
+
+<fieldset style="width:450px;  margin: 2px 0px 2px 4px; ">
+   <legend id="idLegendHotKeys">  </legend> 
+		<table style="width: 440px;  border-collapse: collapse;"  >
+			<tr>
+				<td></td>
+				<td>Shift</td>
+				<td>CTRL</td>
+				<td><div id="idSymbol"></div></td>	
+			</tr>
+			<tr>
+				<td><div style="margin-left: 10px;" id="idHotKeys"></div></td>
+				<td><input id="CheckboxHK1" type="checkbox" class="checkbox"/></td>
+				<td><input id="CheckboxHK2" type="checkbox" class="checkbox"/></td>
+				<td><input id="HKKey" type="text" maxlength="1" onkeyup="this.value = this.value.replace(/[^a-z\d]/i, '').toUpperCase()" class="textfield" style="width: 40px; text-align:center;"/></td>
+			</tr>
+			<tr>
+				<td><div style="margin-left: 10px;" id="idHotKeysUpd"></div></td>
+				<td><input id="CheckboxHKUpd1" type="checkbox" class="checkbox"/></td>
+				<td><input id="CheckboxHKUpd2" type="checkbox" class="checkbox"/></td>
+				<td><input id="HKKeyUpd" type="text" maxlength="1" onkeyup="this.value = this.value.replace(/[^a-z\d]/i, '').toUpperCase()" class="textfield" style="width: 40px; text-align:center;"/></td>
+			</tr>
+				<tr>
+				<td><div style="margin-left: 10px;" id="idHotKeysServ"></div></td>
+				<td><input id="CheckboxHKServ1" type="checkbox" class="checkbox"/></td>
+				<td><input id="CheckboxHKServ2" type="checkbox" class="checkbox"/></td>
+				<td><input id="HKKeyServ" type="text" maxlength="1" onkeyup="this.value = this.value.replace(/[^a-z\d]/i, '').toUpperCase(); onchange();" class="textfield" style="width: 40px; text-align:center;" title="clear to disable hotkey" /></td>
+			</tr>
+		</table>	
+</fieldset>
+
+	<fieldset style="width:450px; margin: 2px 0px 2px 4px; ">
+	  <legend id="idLegendOSDMes">  </legend> 
+         <span style="padding: 0px 0px 0px 5px;" id="idOSDMes1"></span> <input id="CheckboxOSDMes1" type="checkbox" class="checkbox"/>
+         <span style="padding: 0px 0px 0px 10px;" id="idOSDMes2"></span> <input id="CheckboxOSDMes2" type="checkbox" class="checkbox"/>
+         <span style="padding: 0px 0px 0px 2px;" id="idOSDMes3"></span> <input id="CheckboxOSDMes3" type="checkbox" class="checkbox"/>
+     </fieldset>	
+
+</div> 
+
+<!-- Processing/ Working  -->
+<div id="content_2" class="content" style="display:none;">
+
+	<table  style="width: 450px;">
+		<tr>
+			<td><div id="idFilteSmb"></div></td>
+			<td><input id="FilteSmb" type="text" class="textfield"/></td>
+		</tr>
+		
+		<tr style="display:none;">
+			<td><div id="idCHNameFilter"></div></td>
+			<td><input id="CheckboxCHNameFilter" type="checkbox" class="checkbox" disabled />
+			     <div class="moved"> Used a source settings</div>
+			</td> 
+		</tr>
+		<tr  style="display:none;">
+			<td><div id="idSaveGR"></div></td>
+			<td><input id="CheckboxSaveGR" type="checkbox" class="checkbox" disabled /> 
+			    <div class="moved">  Used a source settings</div>
+			</td>
+		</tr>
+		
+		<tr>
+			<td><div id="idSrcInGr"></div></td>
+			<td><input id="SrcInGr" type="checkbox" class="checkbox"/></td>
+		</tr>		
+		<tr>
+			<td><div id="idTVSG"></div></td>
+			<td><input id="TVSG" type="text" class="textfield"/></td>
+		</tr>
+		<tr>
+			<td><div id="idGRign"></div></td>
+			<td><textarea id="GRign"  cols="40" rows="4" style="overflow-y:auto;" class="textfield"></textarea></td>
+		</tr>
+		<tr>
+			<td><div id="idNMign"></div></td>
+			<td><textarea id="NMign"  cols="40" rows="4" style="overflow-y:auto;" class="textfield"></textarea></td>
+		</tr>
+	</table>
+
+	<fieldset style="margin: 5px 5px 0px 5px; ">
+		<legend id="id_EXT_func">  </legend> 			
+			<table  >
+			<tr title="Deprecated [Extended functions]">
+				<td style="width: 400px;"><div id="idUseExtFunc"></div></td>
+				<td><input id="UseExtFunc" type="checkbox" class="checkbox" disabled readonly /></td>
+			</tr>	
+			<tr title="To 576p or 720p">
+				<td style="width: 400px;"><div id="idBWDown"></div></td>
+				<td><input id="BWDown" type="checkbox" class="checkbox"/></td>
+			</tr>
+   </table>	
+  	</fieldset>
+   
+	<fieldset style="margin: 5px 5px 0px 5px; ">
+		<legend id="id_CH_with_TimeZone"> Favorites </legend> 		
+		<table  >
+			<tr > 	<td style="width: 392px;"><div id="idSetGroupOldCh"></div></td>
+				        <td><input id="SetGroupOldCh" type="checkbox" class="checkbox"/></td>
+			</tr>			
+			<tr>     <td  > <div  id="idSetGroupRegional"> </div></td>
+				       <td><input id="SetGroupRegional" type="checkbox" class="checkbox"/></td>
+			</tr>				   
+		</table>	
+	</fieldset>
+
+	
+</div>
+
+<!-- Filters -->
+<input type="text" id="example_text" size="32"  style="display: none;"/>
+
+<div id="content_3" class="content3" style="position: relative; display:none;">
+	<div id="idTabsFilters" style="position:absolute; top:0px; z-index:5; "></div>	
+	<div id="idSaveBox" class="save-box-wrap" >  <div id="idSaveBoxText"  class="save-box" > Saving.. </div>	</div>	
+	
+	<div id="fcontent_1" class="content31" style="display:none;" >
+		<img src="img/filter_up.png" alt=""  class="img_filter_up" />
+		<div id="BtnSaveCF" class= "BtnSaveFilter"></div>
+		<div style="background-color: transparent; z-index:5; ">
+			<table  style="width: 468px; border-collapse: collapse; margin:0px; padding:0px;  vertical-align: middle; z-index:5;">
+				<tr >
+					<th id="idFH1" style="width: 200px; color: white;"></th>
+					<th id="idFH2" style="width: 200px; color: white;"></th>
+					<th style="width: 50px;"></th>
+				</tr>
+			</table>
+		</div>
+		<div class="content4">
+			<div id="idFilterLoading1" class="FilterLoading" >loading..</div>
+			<form method="post" action="/"> 
+				<table id="dynamic" class="tablelist"> 
+					<tr >
+						<td>&nbsp;</td>	
+						<td>&nbsp;</td>
+						<td></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+	
+	<div id="fcontent_2" class="content31" style="display:none;">
+		<img src="img/filter_up.png" alt=""  class="img_filter_up" />
+		<div id="BtnSaveGF" class= "BtnSaveFilter" ></div>
+		<div style="background-color: transparent; z-index:5;">
+			<table   style="width: 468px; border-collapse: collapse; margin:0px; padding:0px; vertical-align: middle;">
+				<tr>
+					<th id="idFG1" style="width: 200px; color: white;"></th>
+					<th id="idFG2" style="width: 200px; color: white;"></th>
+					<th style="width: 50px;"></th>
+				</tr>
+			</table>
+		</div>
+		<div class="content4">
+			<div id="idFilterLoading2" class="FilterLoading" >loading..</div>
+		
+			<form method="post" action="/">
+				<table id="groups" class="tablelist">
+					<tr>
+						<td>&nbsp;</td>	
+						<td>&nbsp;</td>
+						<td></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+	
+	<div id="fcontent_3" class="content31" style="display:none; ">
+		<img src="img/filter_up.png" alt=""  class="img_filter_up" />
+		<div id="BtnSaveCG" class= "BtnSaveFilter"></div>
+		<div style="background-color: transparent; z-index:5;">
+			<table  style="width: 468px; border-collapse: collapse; margin:0px; padding:0px; vertical-align: middle;">
+				<tr>
+					<th id="idCG1" style="width: 200px; color: white;"></th>
+					<th id="idCG2" style="width: 200px; color: white;"></th>
+					<th style="width: 50px;"></th>
+				</tr>
+			</table>
+		</div>
+		<div class="content4">
+			<div id="idFilterLoading3"  class="FilterLoading" >loading..</div>
+
+			<form method="post" action="/">
+				<table id="cgroups" class="tablelist">
+					<tr>
+						<td>&nbsp;</td>	
+						<td>&nbsp;</td>
+						<td></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+	
+	<div style="position:absolute; left:0px; bottom:0px; width:100%; text-align: center; background-color: #f0f0f0; z-index:5; " > 
+	  <span class="filter_unused">unused </span> 
+	  <span class="filter_used"  >used </span> 
+	  <span class="filter_exist" >exist </span> 
+	  <span class="filter_favor" >favorite </span> 
+	</div>	
+	
+</div>
+
+<!-- Update -->
+<div id="content_4" class="content" style="display:none;">
+	<table  >
+   		<tr><td colspan=2>
+	   	<fieldset style="position:inherit; top:4px; left: 4px; right:4px; ">
+		<legend id="idLegendGrPls"> </legend> 
+
+		<table >	   	
+			<tr >
+				<td><div id="idKeyPls"></div></td>
+				<td><input id="CheckboxKeyPls" type="checkbox" class="checkbox"/></td>
+			</tr>
+			<tr>
+				<td><div id="idAutoST"></div></td>
+				<td><input id="CheckboxAutoST" type="checkbox" class="checkbox"/></td>
+			</tr>
+			<tr >
+				<td ><div style="margin-left: 8px;" id="idAutoFL"></div></td>
+				<td><input id="CheckboxAutoFL" type="checkbox" class="checkbox"/></td></tr>
+			<tr>
+				<td><div ></div></td>
+			    <td><div id="idDay2" style="text-align:center;"></div></td>
+				<td><div id="idDay3" style="text-align:center;"></div></td>
+				<td><div id="idDay4" style="text-align:center;"></div></td>
+				<td><div id="idDay5" style="text-align:center;"></div></td>
+				<td><div id="idDay6" style="text-align:center;"></div></td>
+				<td><div id="idDay7" style="text-align:center;"></div></td>
+				<td><div id="idDay1" style="text-align:center;"></div></td>
+			</tr>
+			<tr>
+				<td><div style="margin-left: 8px;" id="idDays"></div></td>
+				<td><input id="CheckboxDay2" type="checkbox" class="checkbox"/></td>
+				<td><input id="CheckboxDay3" type="checkbox" class="checkbox"/></td>
+				<td><input id="CheckboxDay4" type="checkbox" class="checkbox"/></td>
+				<td><input id="CheckboxDay5" type="checkbox" class="checkbox"/></td>
+				<td><input id="CheckboxDay6" type="checkbox" class="checkbox"/></td>
+				<td><input id="CheckboxDay7" type="checkbox" class="checkbox"/></td>
+				<td><input id="CheckboxDay1" type="checkbox" class="checkbox"/></td>
+			</tr>
+		 </table></fieldset></td></tr>
+		
+		<tr >
+			<td><div id="idDelBase"></div></td>
+			<td><input id="CheckboxDelBase" type="checkbox" class="checkbox"/></td>
+		</tr>
+
+		<tr><td colspan=2><div >&nbsp;</div></td> </tr>
+				 		
+		<tr  title = "Increase this value if the program is abnormally restarted or reduce if you want to speed up the processing.">
+			<td ><div  id="idTDTweak"></div></td>
+			<td style="width: 200px;"><input id="TDTweak" type="text" class="numfield"></td>
+		</tr>	
+		
+		<tr style="display:none;" >
+			<td style="color:gray;"><div id="idDMode"></div></td>
+			<td><input id="CheckboxDMode" type="checkbox" class="checkbox" disabled /></td>
+		</tr>					
+	</table>
+	
+</div>
+
+<!-- Sources -->
+<div id="content_5" class="content3" style="display:none;">
+	<div class="content5" >
+		<div id="idSourcesList"  ></div>
+	</div>
+	<div class="content6"   >
+		 <table  style="width: 468px; height: 26px;  background-color: #f0f0f0; background-image: url(img/sources_toolbar.png); ">
+		   <tr>
+		   	<th style="width: 120px; ">
+				<input id="SourceTypePos" type="text" style="width:15px; position:absolute; top:2px; left:120px; display: none;"/>
+				<div id="SourcesType" style="z-index:6; background-color: white;"></div>
+			</th>
+			<th id="idSRCName" style="width: 70px; text-align: right; "></th>
+			<th style="width: 152px; ">
+				<input id="SRCName" type="text" maxlength="100" style="text-align: left; width:150px; border: 1px solid #6f6767; background-color: white;"/>
+				<input id="SRCName1" type="text" maxlength="100" style="display: none; position:absolute; width:150px; border: 1px solid #6f6767;"/>
+				<input id="SRCType" type="text" maxlength="100" style="display: none; position:absolute; width:150px; border: 1px solid #6f6767;"/>
+			</th>
+			<th style="width: 128px;">
+				<div id="BtnSourcesDel" style="position:absolute; top:2px; right:103px; z-index:6;"></div>
+				<div id="BtnSourcesAdd" style="position:absolute; top:2px; right:71px; z-index:6;"></div>
+				<div id="BtnSourcesRef" style="position:absolute; top:2px; right:49px; z-index:6;"></div>
+				<div id="BtnSourcesClean" style="position:absolute; top:2px; right:27px; z-index:6;"></div>
+				<div id="BtnSourcesSave" style="position:absolute; top:2px; right:5px; z-index:6;"></div>
+			</th>
+		   </tr>
+		 </table>
+	</div>
+	<div class="content7"    >
+		 <div id="idSrcLogo" class="SrcLogo"  >  </div> 
+		<table class="tableSources"   >
+			<tr >
+				<td   colspan="3"  >
+				  <div id="idSortName"  style="text-align: right;  margin-right: 2px;"></div>
+				</td>
+				<td   >
+					<input id="SortName" type="text" style="width: 40px; margin-bottom:4px;" class="textfield"/>
+					<input id="SrcID" type="text"  style="display: none;"/>
+				</td>
+			</tr>
+			<tr >
+				<td style="width:70px; " ><div id="idScraper" style="text-align: right;"></div>
+				</td>
+				<td  colspan="3">
+<!--				<input id="Scraper" type="text" onkeyup="carret_pos = getCaret(document.getElementById('Scraper')); this.value = this.value.replace(/[*|<>?&quot]/i, ''); setCaretToPos(document.getElementById('Scraper'), carret_pos);" class="fileselect"/> 
+-->
+					<input id="Scraper" type="text" class="fileselect"  />
+					<input id="ScraperChange" type="file" accept=".lua"  style="display:none;" onchange="change_file_path(this.files[0].name, 'Scraper');"    />
+					<input id="ScraperBtn" alt="open" type="image" class="btn_folder" onclick="select_file('ScraperChange','img/btn_folder_click.png','img/btn_folder.png');"  src="img/clear.png"/>
+					     <!--  style="position:absolute; top:28px; left:314px; z-index:6;" --> 
+				</td>
+			</tr>
+			<tr>
+				<td  ><div id="idPath" style="text-align: right; "></div></td>
+				<td colspan="3">
+<!--				<input id="Path" type="text" onkeyup="carret_pos = getCaret(document.getElementById('Path')); this.value = this.value.replace(/[*|<>?&quot]/i, ''); setCaretToPos(document.getElementById('Path'), carret_pos);" class="fileselect"/> 
+-->
+					<input id="Path" type="text" class="fileselect"/>
+					<input id="PathChange" type="file"  accept=".m3u" style="display:none;"  onchange ="change_file_path(this.files[0].name, 'Path');"  />
+					<input id="PathBtn"  alt="open"  type="image"   class="btn_folder" onclick="select_file('PathChange','img/btn_folder_click.png','img/btn_folder.png');"   src="img/clear.png"/>
+					       <!-- style="position:absolute; top:48px; left:314px; z-index:6;"  -->
+				</td>
+			</tr>
+
+			<tr>
+				<td style="width: 50px; height: 16px;">  <div id="idCodePage" style="text-align: right;"></div></td>
+				<td style="width: 65px;" >
+					<div style="position: relative;">
+						<input id="CodePage" readonly  onclick="SelectList('CodePage');" type="text" class="textfield" style="width: 65px; cursor:pointer; z-index: 3;"/>
+
+						<input id="CodePage1" type="text" style="position: absolute; display: none; width: 10px;  z-index:1;"/>
+						<input id="btnCodePage" type="image" alt="codepage" class="btn_select" onclick="SelectList('CodePage');" 
+						       style="position: absolute; left: 57px; top: 7px;  cursor:pointer; z-index:4;"  src="img/clear.png"/>
+						<ul class="select" id="slCodePage" style="position: absolute; left: 0px; top: 16px; display: none;">
+							<li onclick="ChangeList('CodePage','slCodePage','Plain Text',0)" style="top: 0px; width: 58px;">Plain Text</li>
+							<li onclick="ChangeList('CodePage','slCodePage','UTF-8',1)" style="top: 20px; width: 58px;">UTF-8</li>
+							<li onclick="ChangeList('CodePage','slCodePage','UNICODE',2)" style="top: 40px; width: 58px;">UNICODE</li>
+						</ul>
+
+					</div>
+				</td>
+				<td style="width: 50px; height: 16px;" ><div id="idLastDate" style="text-align: right;"></div></td>
+				<td title="last playlist download date" >
+					<input id="LastDate" readonly  type="text" class="textfield" style="width: 65px; text-align: center; z-index: 3;"/>
+					<input id="LastDate1" type="text" style="position: absolute; display: none; width: 10px; border: 0px; z-index:1;"/>
+				</td>				
+			</tr>
+		</table>
+		<table class="tableSources"  >
+
+			<tr class="highlight">
+				<td class="highlight" style="width: 16px;"><input id="InTVS" type="checkbox"/></td>
+				<td colspan="8" title="In advanced filter 'TVSources'" class="highlight" ><div id="idInTVS"></div></td>
+			</tr>
+		
+			<tr class="highlight">
+				<td><input id="InBase" type="checkbox"/></td>
+				<td colspan="8" title="In detached advanced filter" ><div id="idInBase" ></div></td>
+			</tr>
+					
+			<tr class="highlight">
+				<td><input id="BtnUpdSr" type="checkbox"/></td>
+				<td colspan="8"><div id="idBtnUpdSr"></div></td>		
+			</tr>
+			<tr>
+				<td><input id="ShowProgress" type="checkbox"/></td>
+				<td colspan="8"><div id="idShowProgress"></div></td>		
+			</tr>				
+			<tr>
+				<td style="width: 12px;"></td>
+				<td style="width: 106px;"></td>
+				<td style="width: 16px;"><div id="idSRCDay1" style="text-align: center;"></div></td>
+				<td style="width: 16px;"><div id="idSRCDay2" style="text-align: center;"></div></td>
+				<td style="width: 16px;"><div id="idSRCDay3" style="text-align: center;"></div></td>
+				<td style="width: 16px;"><div id="idSRCDay4" style="text-align: center;"></div></td>
+				<td style="width: 16px;"><div id="idSRCDay5" style="text-align: center;"></div></td>
+				<td style="width: 16px;"><div id="idSRCDay6" style="text-align: center;"></div></td>
+				<td style="width: 16px;"><div id="idSRCDay7" style="text-align: center;"></div></td>		
+			</tr>
+			<tr>
+				<td><input id="AutUpdSr" type="checkbox"/></td>
+				<td><div id="idAutUpdSr"></div></td>
+				<td><input id="SRCDay2" type="checkbox"/></td>
+				<td><input id="SRCDay3" type="checkbox"/></td>
+				<td><input id="SRCDay4" type="checkbox"/></td>
+				<td><input id="SRCDay5" type="checkbox"/></td>
+				<td><input id="SRCDay6" type="checkbox"/></td>
+				<td><input id="SRCDay7" type="checkbox"/></td>
+				<td><input id="SRCDay1" type="checkbox"/></td>				
+			</tr>
+			<tr>
+				<td><input id="DeleteM3U" type="checkbox"/></td>
+				<td colspan="8"><div id="idDeleteM3U"></div></td>		
+			</tr>
+		
+		</table>
+		<fieldset style="padding: 1px; margin: 1px;">
+			<legend>TVSources</legend>
+			<table class="tableSources" style="width: 326px;">
+				<tr>
+					<td style="width: 24px;"><input id="TVS_FCH" type="checkbox"/></td>
+					<td><div id="idTVS_FCH" style="text-align: left;"></div></td>
+				</tr>
+				<tr>
+					<td style="width: 24px;"><input id="TVS_FGR" type="checkbox"/></td>
+					<td><div id="idTVS_FGR" style="text-align: left;"></div></td>
+				</tr>
+				<tr>
+					<td style="width: 24px;"><input id="TVS_GetGR" type="checkbox"/></td>
+					<td><div id="idTVS_GetGR" style="text-align: left;"></div></td>
+				</tr>
+				<tr>
+					<td style="width: 24px;"><input id="TVS_GetLogo" type="checkbox"/></td>
+					<td><div id="idTVS_GetLogo" style="text-align: left;"></div></td>
+				</tr>
+			</table>
+		</fieldset>
+		<fieldset style="padding: 1px; margin: 1px;" >
+			<legend>SimpleTV</legend>
+			<table class="tableSources" >
+				<tr>
+					<td style="width: 24px;"><input id="SRC_M3UexF" type="checkbox"/></td>
+					<td><div id="idSRC_M3UexF"></div></td>		
+				</tr>
+				<tr>
+					<td style="width: 24px;"><input id="SPL_FCH" type="checkbox"/></td>
+					<td title="Recommended: emable"><div id="idSPL_FCH" style="text-align: left;"></div></td>
+				</tr>
+				<tr>
+					<td style="width: 24px;"><input id="SPL_FGR" type="checkbox"/></td>
+					<td title="Recommended: emable"><div id="idSPL_FGR" style="text-align: left;"></div></td>
+				</tr>
+				<tr>
+					<td style="width: 24px;"><input id="SPL_GetGR" type="checkbox"/></td>
+					<td title="Recommended: emable"><div id="idSPL_GetGR" style="text-align: left;"></div></td>
+				</tr>		
+				<tr>
+					<td style="width: 24px;"><input id="SPL_HDGR" type="checkbox"/></td>
+					<td><div id="idSPL_HDGR" style="text-align: left;"></div></td>
+				</tr>
+				<tr>
+					<td style="width: 24px;"><input id="SPL_AutoTVG" type="checkbox"/></td>
+					<td><div id="idSPL_AutoTVG" style="text-align: left;"></div></td>
+				</tr>
+				<tr>
+					<td style="width: 24px;"><input id="SPL_AutoNum" type="checkbox"/></td>
+					<td><div id="idSPL_AutoNum" style="text-align: left;"></div></td>
+				</tr>
+				<tr>
+					<td style="width: 24px;"><input id="SPL_M3UNum" type="checkbox"/></td>
+					<td><div id="idSPL_M3UNum" style="text-align: left;"></div></td>
+				</tr>
+				<tr>
+					<td style="width: 24px;"><input id="SPL_M3USet" type="checkbox"/></td>
+					<td><div id="idSPL_M3USet" style="text-align: left;"></div></td>
+				</tr>
+				
+				<tr>
+					<td style="width: 24px;"><input id="SPL_NoDel" type="checkbox"/></td>
+					<td title="Recommended: disable"><div id="idSPL_NoDel" style="text-align: left;"></div></td>
+				</tr>	
+			</table>
+			<fieldset style="width:96%; padding: 0px; margin: 4px;">
+				<legend id="idCGReadyLegend">1</legend>
+				<table class="tableSources" >
+					  <tr>
+						<td style="padding:2px 0px 1px 14px;">
+						  <div style="position:relative; width:200px; z-index:3;">
+							<input id="AlrCH" readonly  onclick="SelectList('AlrCH');" type="text" class="textfield" style="width: 210px; cursor:pointer; z-index: 2;"/>
+							<input id="AlrCH1" type="text" style="position: absolute; display: none; width: 210px; border: 0px; z-index:1;"/>
+							<input id="btnAlrCH" type="image" alt="type"  class="btn_select" onclick="SelectList('AlrCH');" 
+							    style="position: absolute; left: 198px; top: 7px; cursor:pointer; z-index:6;"  src="img/clear.png"/>
+							<div id="idAlrCH"> </div>
+						  </div>
+						</td>
+					  </tr>
+					  <tr>
+
+						<td style="padding:1px 0px 2px 14px;" >
+						  <div style="position:relative; width:200px; z-index:2;">
+							<input id="TypeSH" readonly  onclick="SelectList('TypeSH');" type="text" class="textfield" style="width: 160px; cursor:pointer; z-index: 2;"/>
+							<input id="TypeSH1" type="text" style="position: absolute; display: none; width: 160px; border: 0px; z-index:1;"/>
+							<input id="btnTypeSH" type="image" alt="type" class="btn_select" onclick="SelectList('TypeSH');" 
+							    style="position: absolute; left: 148px; top: 7px; cursor:pointer; z-index:6;"  src="img/clear.png"/>
+							<div id="idTypeSH" > </div>
+						  </div>
+						</td>
+					  </tr> 
+				</table>
+			</fieldset>
+			<fieldset style="width:96%; padding: 0px; margin: 4px;">
+				<legend id="idTypeMediaLegend"></legend>			
+							<div style="position:relative; width:200px; z-index:1; padding:1px 0px 2px 16px;">
+							<input id="TypeMed" readonly onclick="SelectList('TypeMed');" type="text" class="textfield" style="width: 160px; cursor:pointer; z-index: 2;"/>
+							<input id="TypeMed1" type="text" style="position: absolute; display: none; width: 160px; border: 0px; z-index:1;"/>
+							<input id="btnTypeMed" type="image" alt="type" class="btn_select" onclick="SelectList('TypeMed');" 
+							    style="position: absolute; left: 164px; top: 7px; cursor:pointer; z-index:6;"  src="img/clear.png"/>
+							<div id="idTypeMed"> </div>
+							</div>
+			</fieldset>			
+		</fieldset>
+		<br />
+		<br />
+	</div>
+</div>
+
+<!-- Action -->
+<div id="content_6" class="content" style="display:none;">
+ 
+ <div style="position:absolute; top: 4px; left: 4px; right: 4px; " >	
+	<fieldset style="position:relative;  height: 176px; ">
+		<legend id="idFavAct"> Favorites </legend> 
+		
+		<div id="box" style="display: block; height:114px; ">
+			<div id="idMsgFav"  style="position:absolute; top:20px; left: 4px; font-style: italic; color:gray;"> </div> 		
+			<div id="idButton3" style="position:absolute; top:20px; right: 10px; "></div>
+			<div id="idButton4" style="position:absolute; top:48px; right: 10px; "></div>
+			<div style="position:absolute; top:72px; right: 10px; ">
+			     <input id="RestoreFav" type="checkbox" class="checkbox" style="float:right; "/> 	          
+	             <span id="idRestoreFav" style="width:300px; text-align: right; float:right; " ></span>		
+			</div>
+			<div  style="position:absolute; top:106px; right: 10px; " >
+				   <input id="CheckboxExpandFav" type="checkbox" class="checkbox" style="float:right; "/> <span id="idExpandFav"></span>
+			</div>		
+		</div>
+ <div style="position:absolute; bottom: 4px; left: 4px; right: 4px;  " >	
+	<fieldset style="position: relative; height:36px;   ">
+		<legend id="idBackup">Export / Import  - file: tvs_favorites.txt</legend> 
+			<div id="idButton6" style="display: block; position: absolute; top: 12px; right: 4px;  text-align: center; ">
+	 			   <button  id='idButtonImportFavor' class='button' style='display: block; float: right; width: 110px; font-style: italic;'> Import </button>
+	 			   <span style=" float: right; width: 16px; ">&nbsp;</span>
+	 			   <button  id='idButtonExportFavor' class='button' style='display: block; width: 110px; font-style: italic;'> Export </button>
+	 	    </div> 
+	</fieldset>	
+</div>			
+	</fieldset>
+</div>		
+<div style="position:relative;  top:166px; right: 4px; left: 4px; " >	
+	    <div title="" id="idButton2" style="position:absolute; top:40px; right: 10px;"></div>
+		<div style="position:absolute; top:64px; right: 10px; ">
+		    <input id="AutoClearBase" type="checkbox" class="checkbox" style="float:right;"/> 	          
+		     <span id="idAutoClearBase" style="width:300px; text-align: right; float:right; " >Auto Clear</span>		
+		</div>	
+	    <div title="from SimpleTV to TVSource" id="idButton1" style="position:absolute; top:110px; right: 10px;"></div>	    
+		<div style="position:absolute; top:138px; right: 10px; ">
+		      <span id="idAutoGroupBase" style="width:280px; text-align: right;" >Auto Group</span>	
+		</div>	
+	    <div id="idLastStart" style="position: absolute; top: 156px; right: 10px;  text-align:right;">	</div>
+</div>			
+ 
+	
+</div>
+
+<!-- Information -->
+<div id="content_7" class="content3" style="display:none; " >
+
+	<img src="img/TVSources.png" alt="" style="position: absolute; left: 16px; top: 16px; "/>
+
+	<div style="position: absolute; left: 164px; top: 16px; " >
+	  <span style="font-size: 1.2em; font-weight: bold;">TVSources for SimpleTV </span>
+	</div>
+	  
+	<div id="idInfo" style="position: absolute; left: 132px; top: 36px;"></div>
+
+	<div id="idMediaServer" style=" position: absolute; left: 11px; top: 120px; width: 96%; text-align:left;  " contenteditable="true">	</div>
+
+	<div> <p id="idChangeLog" class="ChangeLog" contenteditable="true" ></p></div>
+	
+</div>
+
+
+<div class="content2"></div>
+
+</div>
+<script type="text/javascript" defer>
+     HKKeyServ.onchange = function() { if (this.value=="") idHotKeysServ.style['color'] = "lightgray"; else  idHotKeysServ.style['color'] = "black"; };
+</script>
+</BODY>
+</HTML>

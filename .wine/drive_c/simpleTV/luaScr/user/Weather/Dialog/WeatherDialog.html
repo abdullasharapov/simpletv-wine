@@ -1,0 +1,983 @@
+<!DOCTYPE HTML>
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+
+<title>Погода на OSD</title>
+
+<style type="text/css">
+
+.hidden {display:none;}
+
+@media \0screen\,screen\9 {
+.ie8hidden {display:none;}
+}
+body { 
+	background-color: #F0F0F0;
+	font-family:    "Arial", "Tahoma","sans-serif";
+	font-size: 11px;
+	padding: 0px;
+	margin: 0px;
+	height: 510px;
+}
+
+fieldset  { margin: 0px; padding: 2px 2px 2px 2px;  border: 1px solid #bbb; }
+.fieldset1 {height:97%;  padding: 0px 4px 0px 4px;  }
+
+  ul#tabs { list-style-type: none; margin: 10px 0px 0px 0px; padding: 0em 0em 0.3em 0em; }
+  ul#tabs li { display: inline; }
+  ul#tabs li a { 
+	color: #42454a; 
+	background-color: #dedbde; 
+	border: 1px solid #c9c3ba; 
+	border-radius: 4px 4px 0px 0px; 
+	border-bottom: none; 
+	padding: 0.3em 1em 0.3em 1em; 
+	text-decoration: none; 
+  }
+  ul#tabs li a:hover { background-color: #e7e7e7; }
+  ul#tabs li a.selected { 
+    color: #000; 
+    background-color: #F9F9F5; /* #f1f0ee; */
+    font-weight: bold; 
+    padding: 0.6em 1em 0.44em 1em; 
+  }
+  div.tabContent { 
+    border: 1px solid #c9c3ba; 
+    padding: 0.2em 0.5em 0.2em 0.5em; 
+    background-color: #F9F9F5; /*#f1f0ee; */
+  }
+  div.tabContent.hide { display: none; }
+
+.switcher {height: 16px; padding: 0px 2px 0px 2px; }
+	
+.select_city {  
+	width: 100%; 
+	border-radius: 4px; 
+	padding: 0px 4px 0px 4px;
+	font-family:  "Arial", "Tahoma","sans-serif";
+	font-size: 11px;
+	} 
+	   
+
+div.line  { width: 420px; margin: 2px; padding: 2px 4px 2px 4px;}
+div.err   { width: 420px; margin: 0px; padding-top: 2px; color:red; font-size: 12px; text-align: center;}
+
+input { padding: 1px 2px 1px 2px; vertical-align: middle; border-radius: 2px;  }
+input.readonly { border: 2px inset #EBE9ED; color: DarkGray; background-color: transparent; }
+input.use { font-size: 11px; }
+
+button { 
+	padding: 2px 8px 2px 8px;
+	cursor:pointer;
+	background-color: #e0e0e0; 
+    color: #333;
+    border-radius: 3px;
+    border: 1px solid #a5a5a5;	
+    vertical-align: middle;	
+}
+button:hover {
+	background-color: #e0FFFF; 
+	border: 1px #3595ff solid;
+}
+.buttonUpd {
+	position: absolute; 
+	right: 6px; bottom: 12px;
+}
+/* table */
+
+ #CityList {
+    height: 160px;
+	padding: 0px;  
+	display: block;
+	border: 1px #bbb solid;  
+	border-radius: 4px; 
+    width: 100%;
+    font-family: "Courier New","Courier","Lucida Console";
+ 	font-size: 11px;
+}
+                              
+.city_table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  height: 160px;
+  position: relative; 
+}
+
+.city_table  thead {
+    position: absolute;
+    background-color:  #93A2B7; 
+    color: #FDFDFD;
+    height: 1.5em;
+    width: 100%;
+  }
+  
+.city_table  thead   tr {
+      display: block;
+    }
+.city_table   tbody {
+    position: absolute;
+    top: 1.5em;  
+    display: block;
+    overflow-y: scroll;
+    width: 100%;
+    height: 140px;
+    background-color:  #fff; 
+    
+  }
+
+.city_table    tr:nth-child(even) {
+      background-color: #EFF2F5;  
+    }
+    
+.city_table  th, .city_table td {
+    min-width: 130px;
+    text-align: left;
+    height: 1.5em;
+    padding: 0px 4px 0px 4px;
+  }
+  
+.city_table  td:nth-child(1), .city_table th:nth-child(1) { min-width: 130px; }
+.city_table  td:nth-child(2), .city_table th:nth-child(2) { min-width: 150px; }
+.city_table  td:nth-child(3), .city_table th:nth-child(3) { width: 150px; }
+
+.city_table tbody td { 
+  /* border: 1px #495F7C solid;   */
+   padding: 2px;  
+   cursor: pointer;
+}
+.city_table tbody tr:hover {
+    background-color: #9FB0C6;   
+}
+.city_table tbody .selected , .city_table tbody .selected:hover {
+    background-color: #C4B8A6;   
+}
+
+/* tab 2,3 */
+.example_1{
+	position: relative;	right:1px; top:1px; 
+	float:right; 
+
+	}
+.example_2 {
+	position: absolute; right:1px; top:1px; 
+	text-align: center; 
+	background-color: rgb(0,0,0); 
+	background-color: rgba(0,0,0,0.8); 
+	color:white;
+	border-radius:4px;
+	padding: 6px;
+}
+.example {
+	overflow: hidden;
+	max-width: 140px;
+	max-height: 80px;
+	word-wrap: normal ;
+	word-break: normal;	
+	position: relative;  
+	top:1px; 
+	text-align: right;
+	padding: 4px; 
+	color: rgb(255,255,255); 
+	color: rgba(255,255,255,0.9); 
+	background-color: rgb(0,0,0); 
+	background-color: rgba(0,0,0,0.7);
+	background-clip: padding-box; 
+	border-width: 0px; 
+	border-style: solid; 
+	border-color: rgb(255,255,255); 
+	border-color: rgba(255,255,255,0.7); 
+	border-radius: 4px; 
+}
+
+.tbl_pos { 
+	border: none; 
+	padding: 0px; margin: 0px; 
+	font-size: 9px; 
+	vertical-align: middle; 
+	display: table-cell; 
+	display: inline-block;
+}
+
+.tbl_pos input[type=radio] { 
+    padding: 0px; margin:0px;
+    width:1em; height:1em;
+    vertical-align: middle;
+    text-align: center;    
+}
+div.line {
+   padding: 2px;
+   min-height: 16px;
+}
+
+span {padding: 0px 0px 0px 2px;}
+span.min_wc { display: inline-block; min-width: 96px; }
+span.min_w  { display: inline-block; min-width: 140px; }
+span.gag    { padding-left: 4px;}
+
+span.span_v { color: gray; font-size: 9px; }
+ 
+select.fontPicker { width: 130px; padding: 0px 4px 0px 4px; margin-right: 4px;}
+
+input.inp_short  { width: 25px; padding: 1px 2px 1px 2px;}
+
+input.hex {font-family:  "Tahoma","monospace"; font-size: 11px; padding: 1px 2px 1px 2px;}
+
+input[type=checkbox] { margin:0px; }
+
+input[type=range] {
+	padding: 0px 4px 0px 0px;
+    width: 30px;     
+}
+ 
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) , screen and (-webkit-min-device-pixel-ratio:0) {  
+/* стили для IE10+  и chromium */
+	input[type=range]  {
+	    width:  75px;
+		height: 7px;
+	}	
+	input[type=range].wide_range {
+	    width:  120px;
+	}
+} 
+
+.img_transp {
+	vertical-align: middle;
+	height: 12px;
+}
+
+/* tab 4 */
+.about {
+    color: #408080;
+	color: rgba(0x40, 0x80, 0x80, 0.9);
+	font-family: "Arial",sans-serif;
+	font-size: 1.4em;
+	text-shadow: 1px 1px 1px #999;	
+	height: 100%;
+	padding: 15% 0 15% 0;
+
+}
+.about legend {color: inherit; }
+.about div  { padding: 0.2em;	 }
+.about .sp_l { width: 46%;  text-align: right; display: inline-block;}
+.about_link img  { border: 1px solid transparent; }
+.about_link:hover img  { border: 1px solid #4040F0;   }
+.about_link {
+	color: #408080;
+	color: rgba(0x40, 0x80, 0x80, 0.9);
+	padding: 0px;
+	cursor: pointer;
+}
+.about_link:hover {
+    color: #4040F0;
+	color: rgba(0x40, 0x40, 0xF0, 0.8);
+}
+/*
+.about_server {
+    color: #408080;
+	font-size: 1em;
+}
+*/
+</style>
+
+<script type="text/javascript">
+    //<![CDATA[
+    
+var isIE = /*@cc_on!@*/false || !!document.documentMode;
+ var first  = false;
+
+  
+/*  Tab functions  */
+    var tabLinks = new Array();
+    var contentDivs = new Array();
+
+    function init() {
+      var tabListItems = document.getElementById('tabs').childNodes;
+      for ( var i = 0; i < tabListItems.length; i++ ) {
+        if ( tabListItems[i].nodeName == "LI" ) {
+          var tabLink = getFirstChildWithTagName( tabListItems[i], 'A' );
+          var id = getHash( tabLink.getAttribute('href') );
+          tabLinks[id] = tabLink;
+          contentDivs[id] = document.getElementById( id );
+        }
+      }
+      var i = 0;
+      for ( var id in tabLinks ) {
+        tabLinks[id].onclick = showTab;
+        tabLinks[id].onfocus = function() { this.blur() };
+        if ( i == 0 ) tabLinks[id].className = 'selected';
+        i++;
+      }
+      var i = 0;
+      for ( var id in contentDivs ) {
+        if ( i != 0 ) contentDivs[id].className = 'tabContent hide';
+        i++;
+      }
+    }
+
+    function showTab() {
+      var selectedId = getHash( this.getAttribute('href') );
+      for ( var id in contentDivs ) {
+        if ( id == selectedId ) {
+          tabLinks[id].className = 'selected';
+          contentDivs[id].className = 'tabContent';
+          if (selectedId == 'osd') { getFonts(fontPicker1font.value); }
+        } else {
+          tabLinks[id].className = '';
+          contentDivs[id].className = 'tabContent hide';
+        }
+      }
+      return false;
+    }
+    
+    function getFirstChildWithTagName( element, tagName ) {
+      for ( var i = 0; i < element.childNodes.length; i++ ) {
+        if ( element.childNodes[i].nodeName == tagName ) return element.childNodes[i];
+      }
+    }
+
+    function getHash( url ) {
+      var hashPos = url.lastIndexOf ( '#' );
+      return url.substring( hashPos + 1 );
+    }
+/*  dlgHelper functions */
+	function getFonts(def_font_name) {
+	  
+	        var rgFonts = new Array();
+	        var nFontLen ;
+	         if (isIE) {
+			        nFontLen= dlgHelper.fonts.count;
+			        for ( var i = 0; i < nFontLen ; i++ ) 	      rgFonts[i] = dlgHelper.fonts(i+1); 	
+			        rgFonts.sort(); 
+	         } else {
+	            nFontLen = 16; 
+	             rgFonts[0] = def_font_name; 
+	             rgFonts[1] = "Arial";
+	             rgFonts[2] = "Arial Black";
+	             rgFonts[3] = "Bookman Old Style";
+	             rgFonts[4] = "Comic Sans MS";
+	             rgFonts[5] = "Courier New";
+	             rgFonts[6] = "Georgia";
+	             rgFonts[7] = "Garamond";
+	             rgFonts[8] = "Impact";
+	             rgFonts[9] = "Lucida Console";
+	             rgFonts[10] = "Palatino";
+	             rgFonts[11] = "Tahoma";
+	             rgFonts[12] = "Times New Roman";
+	             rgFonts[13] = "Trebuchet MS";
+	             rgFonts[14] = "Helvetica";
+	             rgFonts[15] = "Verdana";
+	         }   
+	        
+	        var picker, opt ;
+	        picker = document.getElementById('fontPicker1')
+	        for ( var j = 0; j < nFontLen; j++ ) {
+	            opt = document.createElement('option');
+				opt.text = opt.value  = rgFonts[j];			
+				/*opt.style["color"] = '#ffff00';			*/		
+				opt.style["font-family"] ="'"+rgFonts[j]+ "'";
+				picker.add(opt);
+				if (opt.value == def_font_name) { picker.selectedIndex = j; } 
+	         }
+
+	}  
+	
+
+var elementProto = window.HTMLElement && window.HTMLElement.prototype || 
+      /*ie8*/window.Element && window.Element.prototype || 
+      /*ielt8*/(window["_ielt8_Element_proto"] = {});
+      
+	elementProto.refresh = function () {
+			var elements = document.querySelectorAll(' #osd input[type=range], #other input[type=range], #fontPicker1, #fontPicker1font');
+			var i, e;
+			for ( i = 0; i < elements.length; i++)
+				{    e = elements[i];
+				      if (e.onchange)  	     e.onchange();  
+				 }
+	}
+	
+	/*ie8 call true */
+window.external.CallLua2("xp", window.HTMLElement && 1 || 0);
+
+	 
+
+/* hexString = yourNumber.toString(16); */
+/* yourNumber = parseInt(hexString, 16); */
+
+     elementProto.alpha = function(property,a) {
+        var current_color = this.style[property];
+        if (current_color) {
+	        match = /rgba?\((\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*(,\s*\d+[\.\d+]*)*\)/g.exec(current_color)
+	        a = a > 1 ? (a / 255) : a;
+	        var color= "rgb(" + [ match[1], match[2], match[3] ].join(',') +")";
+	        if ( isNaN(match[4]) ) color = "rgba(" + [ match[1], match[2], match[3], a ].join(',') +")";
+	        this.style[property] = color;
+        }
+      }
+         
+	Number.prototype.intToRGB = function() {
+	    var c = (this & 0x00FFFFFF)
+	        .toString(16)
+	        .toUpperCase();
+	   var r=  "0x"+"00000".substring(0, 6 - c.length) + c;
+	    return r;
+	}	
+
+    function setColor(need_dlg,elem,style_name) {
+         need_dlg = isIE;
+	 	if (true) {
+	 	    var newColor ;
+	 	    if (need_dlg) newColor = dlgHelper.ChooseColorDlg (elem.value.substring(2, 8) ); 
+	 	    if (newColor>=0) { elem.value = newColor.intToRGB();  } 
+	 	   var color_v = elem.value.replace("#", "0x");;
+	 	    var s= "rgb(" + parseInt(color_v.substring(2,4),16)+", "+parseInt(color_v.substring(4,6),16)+", "+parseInt(color_v.substring(6,8),16) +")";
+	 	    if (style_name != '') {
+	 	     document.getElementById('example').style[style_name] = s  
+	 	    }
+	 	   /* alert (elem.value +"\n"+style_name+"\n"+s+"\n"+document.getElementById('example').style[style_name])  */
+        }
+	     else {
+	       ERR.innerHTML =  "Color dialog. Your browser doesn't support dlgHelper!";
+	    }
+    }   
+    
+    function setResultARGB(elem,a,rgb)
+    {
+      var s = Number(a.value).toString(16).toUpperCase()  
+      var rgb_val = rgb.value.replace("#", "").replace("0x", "");
+ 
+      elem.value = '0x' + "00".substring(0, 2 - s.length)+ s + rgb_val; 
+
+     // alert("setResultARGB\n" +s.length+"\ns="+ s + "\nsub=" +"00".substring(0, 2 - s.length)+"\nelem.value=" +  elem.value+"\nrgb.val=" +  rgb.value +"\nrgb_val=" +  rgb_val );
+
+    } 
+/* filter */
+    
+/*  Radio select system */
+	function SelectProvider(refresh)
+		   {     idUnits_1.checked = true; 
+		    	 var r = document.getElementsByName("units");
+				for (var i = 0; i < r.length; i++) {
+				    r[i].disabled = idProv_1.checked;
+				}
+				if (idProv_1.checked) {
+				 CITY_ID_res.value = CITY_ID_YA.value;
+				 CITY_TEXT_res.value = CITY_TEXT_YA.value;
+				 }
+				else {
+				 r[1].disabled =true;  /* только metric и imperial  */
+				 CITY_ID_res.value = CITY_ID.value;
+				 CITY_TEXT_res.value = CITY_TEXT.value;
+				 }
+				 if (CITY_ID_res.value<=0) { CITY_ID_res.style['border'] = '2px inset red'; 
+				                             CITY_TEXT_res.style['border'] = '2px inset red'; }
+				 else { CITY_ID_res.style['border'] = '2px inset #EBE9ED'; 
+				        CITY_TEXT_res.style['border'] = '2px inset #EBE9ED'; }
+				 if (refresh) window.external.CallLua1("provider");
+	   }
+	   
+	function UnitsRadioSet()
+	{
+		var def_units = document.getElementById("CITY_UNITS").value;
+		document.getElementById(def_units).checked = true;  
+	}
+	function UnitsRadioClick(h) {
+	    document.getElementById("CITY_UNITS").value=h.value; 
+	}
+	
+	function PosRadioClick(h) {
+	    document.getElementById("pos_value").value=h.value; 
+	}
+	
+	function SetAlpha(property,el)
+	{
+ 
+	  example.alpha(property,el.value )
+	  /*var opa = el.value*100/255;
+	  example.style.opacity = el.value/255;
+	  example.style.filter = 'alpha(Opacity='+opa+')';*/
+	}
+      
+       function setState(item)
+       { if (item.value=='0') {item.src="img/off.png"; idStateTxt.innerHTML = 'Off';}
+         else { item.src="img/on.png"; idStateTxt.innerHTML = 'On'; }
+       }
+       function toggleState(item){
+           if (item.value==1) {
+              item.src="img/off.png"; idStateTxt.innerHTML = 'Off';
+              item.value='0';
+           } else {
+              item.src="img/on.png"; idStateTxt.innerHTML = 'On'; 
+              item.value='1';
+           }
+        }
+
+	     function open_url(url)
+	     {  
+	        window.external.CallLua1(url);
+	     }
+
+    //]]>
+</script>
+
+
+</head>
+
+<body >
+<script type="text/JavaScript"> 
+
+	  ready = function() {     
+	           if  (!first)  { init(); SelectProvider(false);     first= true;   }
+	  }
+	  /* setTimeout("ready();", 1000);  */
+  </script>
+  
+ <![if IE]> <object id="dlgHelper" classid="clsid:3050f819-98b5-11cf-bb82-00aa00bdce0b" width="0" height="0"></object>  <![endif]>
+
+
+<fieldset class="fieldset1"  >
+	<legend style="font-weight: 600;" >
+	  <img style="height: 24px; margin:0px 2px 6px 2px; vertical-align:middle;" src="../iconset/yandex/32.png" alt="logo" > 
+	  <span id="idHtmlSettings"> Настройки погоды на OSD </span> </legend> 
+
+
+<div style=" float:right; text-align: right;"> 
+      <span id="idStateTxt" style="   color: #408080; font-size: 1em;"> </span>
+      <input type="image" id="idSwitcher" alt="switcher" style="height: 16px; padding: 0px 2px 0px 2px;" 
+             title=" On / Off "    onclick="toggleState(this); return;" />
+</div>
+<!-- ***************** Begin of tabs ************************** --> 
+	<ul id="tabs" >
+	  <li><a href="#geo"     id="li1" class="selected" > <span id="idHtmlGeo">Geo</span></a></li>
+	  <li><a href="#osd"     id="li2"> <span id="idHtmlOSD">OSD</span></a></li>
+	  <li><a href="#other"   id="li3"> <span id="idHtmlOther">Other</span></a></li>
+	  <li><a href="#about"   id="li4"> <span id="idHtmlAbout">About</span></a></li>
+	</ul>
+<div style="clear:both;"> </div>	
+<!-- ***************** Location tab  ****************************** -->	
+	<div class="tabContent" id="geo" >
+	 
+	     <br>
+			<div class="line"> <span id="idHtmlOSDLocality">Название населенного пункта на OSD:</span>
+				<input id="CITY_NAME" style="width: 180px" type="text" > 
+			</div> 
+			
+		   	<div class="line" > <span id="idHtmlProv" >Провайдер погоды: </span>
+			     <input name="provider" id="idProv_0" type="radio" value="0"  onclick="SelectProvider(true);" > OpenWeatherMap			               
+			     <input name="provider" id="idProv_1" type="radio" value="1"  onclick="SelectProvider(true);" > Yandex 
+		     </div>
+		     
+		   <fieldset  class="field1_1" > 
+			    <legend id="idHtmlSelLocality">Выберите населенный пункт</legend>
+			    
+				<div class="line" >
+				    <span id="idHtmlSearch"> Поиск: </span>
+				    <input style="width: 250px" id="SEARCH_CITY" type="text"  
+				           onkeydown = "if (event.keyCode == 13)  document.getElementById('idHtmlBtnSearch').click() ;" > 
+				    <button  id="idHtmlBtnSearch" class="buttonS"></button>
+	    
+				</div>
+				
+				<div id="CityList" > 
+					<table id="city_table" class="city_table">
+	                     <thead><tr> 
+	                           <th id="idHtmlThead1" >Locality </th>
+	                           <th id="idHtmlThead2" >Country</th> 
+	                           <th id="idHtmlThead3" >Map</th> 
+	                       </tr></thead>
+	                     <tbody id="city_table_tbody" >          
+	                     </tbody>
+					</table>
+
+			    </div>	
+
+				<div class="line hidden"> 
+					<span id="idHtmlSelected"  >Выбрано:</span> 
+			   		<input class="readonly" style="width: 60px" id="CITY_ID"  type="text" readonly >
+					<input class="readonly" style="width: 80px" id="CITY_TEXT" type="text" readonly > 
+			   		<input class="readonly" style="width: 60px" id="CITY_ID_YA"  type="text" readonly >		   		
+					<input class="readonly" style="width: 80px" id="CITY_TEXT_YA" type="text" readonly > 
+				</div>
+							    
+			   	<div class="line"> 
+			   	<span id="idHtmlIdLocality" > Будут использоваться: </span> 
+			   		<input class="readonly use" style="width: 60px" id="CITY_ID_res"  type="text" readonly >		   		
+					<input class="readonly use" style="width: 120px" id="CITY_TEXT_res" type="text" readonly > 
+					lat <input class="readonly use" style="width: 40px" id="CITY_lat" type="text" readonly >
+			   		lon <input class="readonly use" style="width: 40px" id="CITY_lon" type="text" readonly >
+				</div>
+            <br>
+		   </fieldset>
+		     
+		   	<div class="line" style="text-align: center;"> <span id="idHtmlUnits_0" >Система мер:</span>
+			     <input name="units" id="idUnits_1" type="radio"  value="metric" > 
+			               <span id="idHtmlUnits_1" title="Celsius, meter/sec" > метрическая </span>
+			     <input name="units" id="idUnits_2" type="radio"  value="standard"  >
+			               <span id="idHtmlUnits_2" title="Kelvin, meter/sec" > международная </span>
+			     <input name="units" id="idUnits_3" type="radio"  value="imperial"  > 
+			               <span id="idHtmlUnits_3" title="Fahrenheit, miles/hour"> британская </span>
+		     </div>
+<style type="text/css">
+#idExampleIconSet img { width: 22px; height: 22px; }
+#idExampleIconSet:hover { background-color: lightblue;}
+</style>
+
+
+		   <fieldset  class="field1_1"  > 
+			    <legend id="idHtmlIconSet"></legend>
+			    	<div style="display: flex; justify-content: flex-start; align-items: center; " >
+	                    <span   style="margin: 0px 4px 0px 2px; cursor:pointer; " ><img style="width:16px;" src="img/info.png" alt="info" title="Iconsets info" onclick="open_url('u_info'); "></span>
+	                    <span  id="idListIconSet"   > <select id="idIconSet" size="1"  > </select></span> 
+	                    <span  id="idExampleIconSet"  style="margin-left: 4px; border-radius:6px;" ></span>
+                    </div>
+	    	 </fieldset>
+             
+             <div id="idStatus" class="err"  > </div> 
+			     
+		     <!--[if IE8]>	<span id="ie8" class="hidden" > </span> <![endif]-->
+	   			  
+	
+	</div>
+<!-- ******************* OSD tab  *********************** -->	
+	<div class="tabContent hide" id="osd" >
+	    <div class="example_1"  >	    
+		    <div class="example_2">  <span  id="idHtmlExample"> Example: </span>
+					<div id="example" class="example" >
+					  <span style="all: inherit; border:0px;" >12:34<br></span>+5.6°C<br>hummidity:&nbsp;78%<br>wind:&nbsp;9.0&nbsp;m/s<br>
+					</div>
+		    </div>	
+	    </div>
+	  
+		<div >
+			<div  class="line" style="display: table;" >
+				 <span style="vertical-align: middle;" id="idHtmlPosition" class="min_w">Положение на экране:</span>
+				 <table  class="tbl_pos"  >
+				   <tr><td> <input name="pos" id="pos_1" type="radio"  value="1" > </td>
+				       <td> <input name="pos" id="pos_2" type="radio"  value="2" > </td> 
+				       <td> <input name="pos" id="pos_3" type="radio"  value="3" > </td> </tr>
+				   <tr><td> <input name="pos" id="pos_4" type="radio"  value="4" > </td>
+				       <td> <input name="pos" id="pos_5" type="radio"  value="5" > </td> 
+				       <td> <input name="pos" id="pos_6" type="radio"  value="6" > </td> </tr>
+				   <tr><td> <input name="pos" id="pos_7" type="radio"  value="7" > </td>
+				       <td> <input name="pos" id="pos_8" type="radio"  value="8" > </td> 
+				       <td> <input name="pos" id="pos_9" type="radio"  value="9" > </td> </tr>
+				 </table>
+			</div>
+			
+			<div class="line">
+			    <span  id="idHtml_showtime" class="min_w">Показывать время:</span>
+				<input id="showtime"  type="checkbox" onclick="example.children[0].style.display=this.checked?'':'none';" onchange="onclick();">			
+			</div>
+							
+			<div class="line">
+			    <span  id="idHtml_font_weight" class="min_w" title="normal=400, bold=700">Шрифт жирность: </span>
+				<input id="font_weight"  class="inp_short" type="range" min="100" max="900" step="100" value="400" onkeyup="onchange();">
+				<span id="font_weight_v" class="span_v" > &nbsp;</span>
+			</div>			
+			
+			<div class="line">
+			    <span  id="idHtml_font_height" class="min_w">Шрифт размер: </span>
+				<input id="font_height"  class="inp_short wide_range" type="range" min="8" max="64" step="1" value="14" onkeyup="onchange();">
+				 <span id="font_height_v"   class="span_v"> &nbsp;</span>
+
+			</div>
+						
+			<div class="line">
+			    <span   id="idHtml_font_name" class="min_w">Шрифт наимнование:</span>
+				<select id="fontPicker1" class="fontPicker" > </select>
+				<input  id="fontPicker1font"  style="display:none;" type="text" >
+				<span  class="gag"></span> <span  id="idHtml_font_antialias" class="min_wc" >Антиалиас</span> 
+				<input id="font_renderingmode"  type="checkbox" >
+
+			</div>
+			
+			<div class="line">
+			    <span  id="idHtml_color0" class="min_wc"> Шрифт цвет: </span>
+
+
+		   		<input id="color0" class="hex" style="width: 56px; cursor: pointer;"  type="text"  
+		   		       onclick="setColor(true,this,'color'); setResultARGB(color0res,color0a,this); example.alpha('color',color0a.value);"       onkeyup="onchange();" > 
+				<img src="img/transp.png" class="img_transp ie8hidden" alt="transp" title="transparency"> 
+				<input id="color0a" class="inp_short hex ie8hidden" type="range" min="0" max="255" step="1" value="210"  onkeyup="onchange();" >
+				<input id="color0res" class="hex hidden" style="width: 70px; background-color: transparent;" type="text" readonly >
+			</div>
+																	
+			<div class="line">
+			    <span  id="idHtml_backcolor0" class="min_wc" >Цвет фона:</span>
+		   		<input id="backcolor0" class="hex" style="width: 56px; cursor: pointer;" type="text" 
+		   		       onclick="setColor(true,this,'background-color'); setResultARGB(backcolor0res,backcolor0a,this); example.alpha('background-color',backcolor0a.value);"  
+		   		       onkeyup="onchange();" > 
+				<img src="img/transp.png" class="img_transp ie8hidden" alt="transp" title="transparency"> 
+				<input id="backcolor0a" class="inp_short hex ie8hidden" type="range" min="0" max="255" step="1" value="210"  onkeyup="onchange();" >
+				<input id="backcolor0res" class="hex hidden" style="width: 70px; background-color: transparent;" type="text" readonly >		
+			
+			</div>
+			<div class="line">
+			    <span  id="idHtml_backcolor1" class="min_wc" >Цвет фона 2:</span>
+		   		<input id="backcolor1" class="hex" style="width: 56px; cursor: pointer;" type="text" 
+		   		       onclick="setColor(true,this,''); setResultARGB(backcolor1res,backcolor1a,this); "  
+		   		       onkeyup="onchange();" > 
+				<img src="img/transp.png" class="img_transp ie8hidden" alt="transp" title="transparency"> 
+				<input id="backcolor1a" class="inp_short hex ie8hidden" type="range" min="0" max="255" step="1" value="210"  onkeyup="onchange();" >
+				<input id="backcolor1res" class="hex hidden" style="width: 70px; background-color: transparent;" type="text" readonly >
+
+			    <span  class="gag"></span><span  id="idHtml_backroundcorner" class="min_wc" >Фон закругление: </span>
+				<input id="backroundcorner"  class="inp_short" type="text" onkeyup="onchange();" >
+
+			</div>
+			
+			<div class="line">
+			  <span  id="idHtml_background" class="min_wc" >Тип фона: </span>
+			  <select size="1" name="type_background" id ="type_background">
+				    <option id="idHtml_background_0" value=-1> </option>
+				    <option id="idHtml_background_1" value=0> </option>
+				    <option id="idHtml_background_2" value=1> </option>
+				    <option id="idHtml_background_3" value=2> </option>
+				    <option id="idHtml_background_4" value=3> </option>
+				    <option id="idHtml_background_5" value=4> </option>
+			  </select>
+			 </div>
+			 				
+			<div class="line">
+			    <span  id="idHtml_bordercolor0" class="min_wc"> Рамка цвет: </span>
+		   		<input id="bordercolor0" class="hex" style="width: 56px; cursor: pointer;" type="text" 
+		   		       onclick="setColor(true,this,'border-color'); setResultARGB(bordercolor0res,bordercolor0a,this); example.alpha('border-color',bordercolor0a.value);"  
+		   		       onkeyup="onchange();" > 
+				
+				<img src="img/transp.png" class="img_transp ie8hidden" alt="transp" title="transparency"> 
+				<input id="bordercolor0a" class="inp_short hex ie8hidden" type="range" min="0" max="255" step="1" value="210"  onkeyup="onchange();" >
+				<input id="bordercolor0res" class="hex hidden" style="width: 70px; background-color: transparent;" type="text" readonly >
+
+			    <span  class="gag"></span><span  id="idHtml_borderwidth" class="min_wc"> Рамка ширина: </span>
+				<input id="borderwidth"  class="inp_short" type="text" onkeyup="onchange();">
+			</div>
+			
+			<div >
+
+			 <fieldset>   <legend id="idHtmlGlow">glow</legend>
+			    <span  id="idHtml_glowcolor" class="min_wc" >Цвет:</span>
+		   		<input id="glowcolor" class="hex" style="width: 56px; cursor: pointer;" type="text" 
+		   		       onclick="setColor(true,this,''); setResultARGB(glowcolorres,glowcolora,this); "  
+		   		       onkeyup="onchange();" > 
+				<img src="img/transp.png" class="img_transp ie8hidden" alt="transp" title="transparency"> 
+				<input id="glowcolora" class="inp_short hex ie8hidden" type="range" min="0" max="255" step="1" value="210"  onkeyup="onchange();" >
+				<input id="glowcolorres" class="hex hidden" style="width: 70px; background-color: transparent;" type="text" readonly >
+
+			    <span  class="gag"></span><span  id="idHtml_glow" class="min_wc" >Ширина: </span>
+				<input id="glow"  class="inp_short" type="text" onkeyup="onchange();" >
+			 
+             </fieldset>
+			</div>
+			
+		    <div >			
+ 		   <fieldset>   <legend id="idHtmlIndents">Отступы:</legend> 
+				<div >
+				    <span id="idHtml_top"  class="min_wc" > по вертикали: </span> <input id="id_top"    class="inp_short" type="text">
+				    <span id="idHtml_left" class="min_wc" > по горизонтали: </span> <input id="id_left"   class="inp_short" type="text">
+				</div>				
+			</fieldset>	
+			</div>	
+								
+			<div class="line" > <span id="idHtmlTextAlign_0" class="min_wc" >Расположение текста:</span>
+			     <input name="textal" id="idTextAlign_1" type="radio" value="0x00"  onclick="onchange();"  >  
+			     <span id="idHtmlTextAlign_1"> прижат влево </span>
+			     <input name="textal" id="idTextAlign_2" type="radio" value="0x01"  onclick="onchange();" >  
+			     <span id="idHtmlTextAlign_2"> по центру </span>
+			     <input name="textal" id="idTextAlign_3" type="radio" value="0x02"  onclick="onchange();" >  
+			     <span id="idHtmlTextAlign_3"> прижат вправо </span>
+		     </div>
+
+		</div>	
+	
+
+		   
+	</div>
+
+
+	
+<!-- ******************* Other tab  *********************** -->	
+	<div class="tabContent hide" id="other" >
+
+		  <fieldset>  <legend id="idHTMLIcon">Icon</legend>
+				<div class="line">
+				    <span  id="idHtml_showicon" class="min_w">Показывать пиктограмму:</span>
+					<input id="showicon"  type="checkbox" >				
+				</div>	
+						   
+ 			<div class="line">
+			    <span  id="idHtml_iconkoeff" class="min_w" >Коэффициент: </span>
+				<input id="iconkoeff"  class="inp_short wide_range" type="range" min="1.0" max="4.0" step="0.1" value="1.0"  title="1.0 .. 4.0" onkeyup="onchange();" />
+				<span id="iconkoeff_v"  class="span_v"  > &nbsp;</span>
+			</div>	
+ 			<div class="line">
+			    <span  id="idHtml_iconspaces" class="min_w" >Отступ: </span>
+				<input id="iconspaces"  class="inp_short wide_range" type="range" min="1" max="10" step="1" value="4" title="1 .. 10" onkeyup="onchange();" />
+				<span id="iconspaces_v"  class="span_v"> &nbsp;</span>
+			</div>	
+						
+         </fieldset>	
+
+ 			<div class="line">
+			    <span  id="idHtml_fullscreen_fontkoeff" class="min_w" >Коэффициент шрифт: </span>
+				<input id="fullscreen_fontkoeff"  class="inp_short wide_range" type="range" min="1.0" max="4.0" step="0.1" value="1.0" title="1.0 .. 4.0"  onkeyup="onchange();" />
+				<span id="fullscreen_fontkoeff_v"   class="span_v"> &nbsp;</span>
+			</div>	
+ 	    
+ 	    
+		  <fieldset>  <legend id="idHTMLServer">Server</legend>
+	    	  <div class="about_server" title="Receive commands: 'SHORT', 'FULL', 'HIDE', 'YANDEX', 'OPENWEATHERMAP' "> 
+			     <span  id="idHtmlRunServer" >Запускать tcp-сервер:</span>
+				     <input id="ServerUse"  type="checkbox" > &nbsp;	
+		         <span id="idHtmlPort" > ip: </span>
+				     <input id="ServerIp"  style="width: 115px ; color:inherit;" type="text" > 
+		         <span id="idHtmlPort" > port: </span>
+				     <input id="ServerPort"  style="width: 40px ; color:inherit;" type="text" > 
+			  </div>
+		  
+           </fieldset>	
+	</div>	
+<!-- *********************** About tab  ********************* -->
+	<div class="tabContent hide" id="about" >
+
+
+		<div class="about">
+		   <fieldset>   <legend id="idHtmlAboutHotKeys">Hot keys</legend>
+			   
+			   <div> <span class="sp_l" id="idHtmlAboutHotKey1"> Show forecast </span> &nbsp; ctrl + 7</div>
+			   <div> <span class="sp_l" id="idHtmlAboutHotKey2"> Switch weather mode</span> &nbsp; shift + 7  </div>
+			   <div> <span class="sp_l" id="idHtmlAboutHotKey3"> Force update weather </span> &nbsp; ctrl + shift + 7 </div>
+           </fieldset>	
+           <br>	
+		   <div> <span class="sp_l" id="idHtmlAboutAuthor"> Script author: </span> &nbsp; BM </div>
+		   <div> <span class="sp_l" id="idHtmlAboutProvider"> Weather provider:</span>		   
+
+		         <span  class="about_link" onclick="open_url('u_owm'); ">		         
+		            <img src="img/OWM_logo32_32.png" width="32px" style="vertical-align: middle;" alt="logo"> OpenWeatherMap
+		         </span>
+		   </div>
+		   <div> <span class="sp_l" > </span> 
+		         <span  class="about_link" onclick="open_url('u_yandex'); ">	         
+		            <img src="../iconset/yandex/32.png" width="32px" style="vertical-align: middle;" alt="logo"> Yandex
+		         </span>
+		   </div>
+	    </div>
+	    
+
+	</div>
+
+<!-- ***************** Ebd of tabs  ************************* -->
+ <div  class="err" id="ERR"> &nbsp; </div>				
+
+</fieldset> 
+
+<button  id="idHtmlBtnUpdate" class="buttonUpd"></button>
+
+<!-- <input  id="idHtmlBtnUpdate" class="btnUpdate" type="button" value="Обновить" >  -->
+
+
+<!-- ***************** After elements create *************** -->
+<script type="text/javascript" defer>
+
+ /*  Change  type text to  type color */
+ 	function color_type(id)
+	 {
+				var e = document.getElementById(id);
+				if (e.type != 'color') {
+				    var v = e.value; 
+				    e.type = 'color'; 
+				    e.value =   v.replace("0x", "#"); 
+			    }
+	}
+
+ 	 function ChangeTypeToColor() {
+				 if (!isIE) {
+							    color_type('color0');
+							    color_type('backcolor0');
+							    color_type('backcolor1');
+							    color_type('bordercolor0');
+							    color_type('glowcolor');
+			    }		
+	}
+  ChangeTypeToColor(); 
+		    
+  document.getElementById('CityList').onclick = function highlight(e) {
+		    var s = this.querySelectorAll('.selected'); // IE8 ('selected');
+		    if (s[0])     s[0].className = s[0].className.replace(' selected','')   ;
+		    var ev = e || window.event;
+		    var target = ev.target || ev.srcElement;
+		    target.parentNode.className = target.parentNode.className + ' selected';
+		    var cells = target.parentNode.getElementsByTagName("td");
+		    if (cells[0]) {
+		        if (idProv_0.checked) {
+					CITY_TEXT.value = cells[0].innerHTML+', '+ cells[1].innerHTML;
+				    CITY_ID.value   = cells[3].innerHTML;
+				}
+				if (idProv_1.checked) {
+					CITY_TEXT_YA.value = cells[0].innerHTML+', '+ cells[1].innerHTML;
+				    CITY_ID_YA.value   = cells[3].innerHTML;
+				}
+			    if (cells[4].innerHTML!='') CITY_lat.value = cells[4].innerHTML;
+			    if (cells[5].innerHTML!='') CITY_lon.value = cells[5].innerHTML;
+			    }
+			    SelectProvider(false);
+}
+
+  color0.onchange  = function() { try { setColor(false,this,'color'); setResultARGB(color0res,color0a,this); example.alpha('color',color0a.value);  } catch(e){;}};
+  color0a.onchange = function() { try { setResultARGB(color0res,this,color0); example.alpha('color',color0a.value); } catch(e){;} } ;
+
+
+  backcolor0.onchange = function() { try{ setColor(false,this,'background-color'); setResultARGB(backcolor0res,backcolor0a,this); example.alpha('background-color',backcolor0a.value);  } catch(e){;}};
+  backcolor0a.onchange = function() { try{  setResultARGB(backcolor0res,this,backcolor0); example.alpha('background-color',backcolor0a.value); } catch(e){;} } ;
+
+  backcolor1.onchange = function() { try{  setColor(false,this,''); setResultARGB(backcolor1res,backcolor1a,this); } catch(e){;} };
+  backcolor1a.onchange = function() {  try{ setResultARGB(backcolor1res,this,backcolor1); } catch(e){;} } ;
+
+  //type_background.onchange = function() { ; };
+  
+  backroundcorner.onchange = function() { example.style['border-radius'] = this.value.toString()+'px'; };
+  borderwidth.onchange = function() { example.style['border-width'] = this.value.toString()+'px' ; };
+  
+  bordercolor0.onchange = function() {  try{ setColor(false,this,'border-color'); setResultARGB(bordercolor0res,bordercolor0a,this); example.alpha('border-color',bordercolor0a.value); } catch(e){;} };
+  bordercolor0a.onchange = function() {  try{ setResultARGB(bordercolor0res,this,bordercolor0); example.alpha('border-color',bordercolor0a.value); } catch(e){;} } ;
+
+  fontPicker1.onchange = function() {  try{ example.style['font-family'] = this.value; if (this.value) fontPicker1font.value = this.value; } catch(e){;} };
+  fontPicker1font.onchange = function() {  try{ example.style['font-family'] = this.value;} catch(e){;} };
+
+  font_height.onchange = function() {  try{  example.style['font-size'] = (this.value<20?this.value:20).toString()+'px';   font_height_v.innerHTML = this.value.toString();  } catch(e){;} }
+  font_weight.onchange = function() { try { example.style['font-weight'] = this.value.toString(); font_weight_v.innerHTML = this.value.toString();} catch(e){;} }
+
+
+glowcolor.onchange = function() {
+    try {
+		if (glow.value>0) { example.style['text-shadow'] = '#'+glowcolor.value.substring(2, 8) + ' 0px 0px '+ glow.value+'px';  }
+		else example.style['text-shadow'] = '' ;
+		 setResultARGB(glowcolorres,glowcolora,this); 
+	} catch(e){;} 
+}
+
+glowcolora.onchange = function() { setResultARGB(glowcolorres,this,glowcolor);  glowcolor.onchange();  } ;
+glow.onchange = function() { glowcolor.onchange(); }
+
+
+  idTextAlign_1.onchange = function() { if(this.checked) example.style['text-align']='left'  ; };
+  idTextAlign_2.onchange = function() { if(this.checked) example.style['text-align']='center'; };
+  idTextAlign_3.onchange = function() { if(this.checked) example.style['text-align']='right' ; };
+
+iconkoeff.onchange = function() { iconkoeff_v.innerHTML = this.value.toString(); };
+iconspaces.onchange = function() { iconspaces_v.innerHTML = this.value.toString(); };
+  
+fullscreen_fontkoeff.onchange = function() { fullscreen_fontkoeff_v.innerHTML = this.value.toString(); };
+/*
+iconkoeff.onchange();
+iconspaces.onchange();
+fullscreen_fontkoeff.onchange();
+	  */
+
+/*elementProto.refresh();*/
+idIconSet.onchange =  function() {  window.external.CallLua1("iconset"); }
+
+</script>
+
+
+</body>
+</html>

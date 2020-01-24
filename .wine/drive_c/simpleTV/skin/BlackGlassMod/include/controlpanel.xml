@@ -1,0 +1,189 @@
+<controlpanel>
+
+ <background src="img\main.png" skip="51" size="2" setcy="1" usetransparent="1" can_glass="0" useSystemColorizationColor="0" hideColorizationWhenGlass="1" hideAllWhenGlass="0"  hideImageWhenTransparent="0" colorizationColorMinAlpha="0.65" type="-1" color1="0x90808080" />
+  
+ <resizeinfo resizeable="1" mincx="580"  />
+ 
+ <node class="STATIC" id="UPPER_TEXT_ID" typeAlign="1" cx="-100" cy="17" x="8" y="2" xb="99" yb="0">
+   <font name="Arial" height="12" bold="1" />
+   <text aligment="0x81" color="0xFEF8F8F8"/>
+   <glow glow="0" samples="4" color="0xB4E6E6E6"/>
+   <textscrollinfo step="1" delay="25" delayonstart="75"/>
+ </node>
+
+ <node class="STATIC" id="SPEED_TEXT_ID" typeAlign="2" cx="40" cy="12" x="112" y="72" xb="0" yb="0">
+   <font name="Arial" height="11" bold="1" />
+   <text aligment="0x84" color="0xFE3C3C3C"/>
+ </node>
+ 
+ <node class="STATIC" id="DRM_TEXT_ID" typeAlign="3" cx="35" cy="12" x="10" y="98" xb="0" yb="0">
+   <font name="Arial" height="9" bold="1" spacing="105" />
+   <text value="drm" aligment="0x84" color="0xFFFF1010"/>
+ </node>
+ 
+ <node class="STATIC" id="TIME_TEXT_ID" typeAlign="3" cx="130" cy="13" x="5" y="86" xb="0" yb="0">
+   <font name="Arial" height="9" bold="1" />
+   <text aligment="0x82" color="0xC0F8F8F8" />
+   <margins marginRight="3"/>
+   <background type="0" color1="0x501010C0"/>  
+ </node>
+
+ <node class="BUTTON" id="PLAY_BUTTON_ID"  typeAlign="2" cx="40" cy="56" x="0" y="28">
+   <image isalpha="0" src="img\PlayButton.png" tooltip="translateMe(Play)"/>
+   <image isalpha="0" src="img\PauseButton.png" tooltip="translateMe(Pause)" /> 
+ </node>
+
+ <node class="BUTTON" id="FF_BUTTON_ID" typeAlign="2" cx="30" cy="30" x="35" y="41">
+   <image isalpha="0" src="img\FFButton.png" tooltip="translateMe(Increase playback speed)"/>
+ </node>
+
+ <node class="BUTTON" id="FFJUMP_BUTTON_ID" auto="300" typeAlign="2" cx="30" cy="30" x="65" y="41">
+   <image isalpha="0" src="img\FFJumpButton.png" tooltip="translateMe(Skip forward)"/>
+ </node>
+
+ <node class="BUTTON" id="NEXT_BUTTON_ID" typeAlign="2" cx="30" cy="30" x="95" y="41">
+   <image isalpha="0" src="img\NextButton.png" tooltip="translateMe(Next channel/media)"/>
+ </node>
+
+ <node class="BUTTON" id="REW_BUTTON_ID"  typeAlign="2" cx="30" cy="30" x="-35" y="41">
+   <image isalpha="0" src="img\RewButton.png" tooltip="translateMe(Decrease playback speed)"/>
+ </node>
+
+ <node class="BUTTON" id="REWJUMP_BUTTON_ID" auto="1" typeAlign="2" cx="30" cy="30" x="-65" y="41">
+   <image isalpha="0" src="img\RewJumpButton.png" tooltip="translateMe(Skip backward)"/>
+ </node>
+
+ <node class="BUTTON" id="PREV_BUTTON_ID" typeAlign="2" cx="30" cy="30" x="-95" y="41">
+   <image isalpha="0" src="img\PrevButton.png" tooltip="translateMe(Previous channel/media)"/>
+ </node>
+
+ <node class="BUTTON" id="STOP_BUTTON_ID" typeAlign="2" cx="30" cy="30" x="-125" y="41">
+   <image isalpha="0" src="img\StopButton.png" tooltip="translateMe(Stop)"/>
+ </node>
+
+ <node class="BUTTON" id="REC_BUTTON_ID" typeAlign="2" cx="30" cy="30" x="125" y="41">
+   <image isalpha="0" src="img\RecButton.png" tooltip="translateMe(Record)"/>
+   <image isalpha="1" animation="1" src="img\RecButtonActive.png" tooltip="translateMe(Record)"/>
+ </node>
+ 
+ 
+ <node class="BUTTON" id="PLAY_MODE_STOP_ON_ERROR_BUTTON_ID" checkable="1" typeAlign="1" cx="19" cy="18" x="32" y="58">
+   <image isalpha="0" src="img\PlayModeStopOnError1Button.png" tooltip="translateMe(Play mode - don&apos;t stop on error)"/>   
+   <image isalpha="0" checked="1" src="img\PlayModeStopOnError0Button.png" tooltip="translateMe(Play mode - stop on error)"/>   
+ </node>
+ 
+ <node class="BUTTON" id="PLAY_MODE_RANDOM_BUTTON_ID" checkable="1" typeAlign="1" cx="19" cy="18" x="51" y="58">
+   <image isalpha="1" src="img\PlayModeRandomOffButton.png" tooltip="translateMe(Random mode off)"/>   
+   <image isalpha="1" checked="1" src="img\PlayModeRandomOnButton.png" tooltip="translateMe(Random mode on)"/>   
+ </node>
+ 
+ <node class="BUTTON" id="PLAY_MODE_BUTTON_ID" autoChangeIndex="1" typeAlign="1" cx="19" cy="18" x="75" y="58">
+   <image isalpha="0" src="img\PlayModeNextButton.png" tooltip="translateMe(Play mode - next)"/>
+   <image isalpha="0" src="img\PlayModeRepeatButton.png" tooltip="translateMe(Play mode - repeat folder)"/>
+   <image isalpha="0" src="img\PlayModeRepeat1Button.png" tooltip="translateMe(Play mode - repeat)"/>
+   <image isalpha="0" src="img\PlayModeOnceButton.png" tooltip="translateMe(Play mode - once)"/>
+ </node>
+ 
+
+ <node class="BUTTON" id="PLAYLST_BUTTON_ID" checkable="1" typeAlign="1" cx="17" cy="18" x="8" y="36">
+   <image isalpha="0" src="img\PlayListButton.png" tooltip="translateMe(Show playlist)"/>
+   <image isalpha="0" checked="1" src="img\PlayListButtonActive.png" tooltip="translateMe(Hide playlist)"/>
+ </node>
+
+ <node class="BUTTON" id="PIP_BUTTON_ID" checkable="1" typeAlign="1" cx="19" cy="18" x="31" y="36">
+   <image isalpha="0" src="img\PiPButton.png" tooltip="translateMe(Show PiP)"/>
+   <image isalpha="0" checked="1" src="img\PiPButtonActive.png" tooltip="translateMe(Hide PiP)"/>
+ </node>
+
+ <node class="BUTTON" id="MULTIPIP_BUTTON_ID" checkable="1" typeAlign="1" cx="19" cy="18" x="55" y="36">
+   <image isalpha="0" src="img\MultiPiPButton.png" tooltip="translateMe(Show MultiPiP)"/>
+   <image isalpha="0" checked="1" src="img\MultiPiPButtonActive.png" tooltip="translateMe(Hide MultiPiP)"/>
+ </node>
+
+ <node class="BUTTON" id="EQU_BUTTON_ID" typeAlign="1" cx="15" cy="18" x="9" y="58">
+   <image isalpha="0" src="img\EquButton.png" tooltip="translateMe(Show equalizer)"/>
+   <image isalpha="0" src="img\EquButtonActive.png" tooltip="translateMe(Hide equalizer)"/>
+ </node>
+
+ <node class="BUTTON" id="SETUP_BUTTON_ID" typeAlign="3" cx="30" cy="30" x="5" y="41">
+   <image isalpha="0" src="img\SetupButton.png" tooltip="translateMe(Preferences)"/>
+ </node>
+
+ <node class="BUTTON" id="CLOSE_BUTTON_ID" typeAlign="3" cx="14" cy="15" x="7" y="4">
+   <image isalpha="0" src="img\CloseButton.png" tooltip="translateMe(Exit)"/>
+ </node>
+
+ <node class="BUTTON" id="MIN_BUTTON_ID" typeAlign="3" cx="14" cy="15" x="24" y="4">
+   <image isalpha="0"  src="img\MinButton.png" tooltip="translateMe(Minimize)"/>
+ </node>
+
+ <node class="BUTTON" id="TRAY_BUTTON_ID" typeAlign="3" cx="14" cy="15" x="40" y="4">
+   <image isalpha="0" src="img\TrayButton.png" tooltip="translateMe(Minimize to tray)"/>
+ </node>
+
+ <node class="BUTTON" id="FULLSCR_BUTTON_ID" checkable="1" typeAlign="3" cx="14" cy="15" x="60" y="4">
+   <image isalpha="0" src="img\FullScrButton.png" tooltip="translateMe(Fullscreen mode)"/>
+   <image checked="1" isalpha="0" src="img\FullScrButtonActive.png" tooltip="translateMe(Exit from fullscreen mode)"/>
+ </node>
+
+ <node class="BUTTON" id="OVERALL_BUTTON_ID" checkable="1" typeAlign="3" cx="14" cy="15" x="76" y="4">
+   <image isalpha="0" src="img\OverAllButton.png" tooltip="translateMe(Enable always on top)"/>
+   <image checked="1" isalpha="0" src="img\OverAllButtonActive.png" tooltip="translateMe(Disable always on top)"/>
+ </node>
+
+ <node class="BUTTON" menu="1" id="CROP_BUTTON_ID" typeAlign="1" cx="65" cy="13" x="10" y="86">
+   <image src="img\CutButton.png" tooltip="translateMe(Cropping)"/>
+   <font name="Arial" height="9" weight="40" />
+   <text x="16" y="-1" cx="39" cy="13" color="0xFEF8F8F8" aligment="0x84" />
+   <glow  color="0x60808080" glow="0"  />
+   <dropinfo cx="50"/>   
+ </node>
+
+ <node class="BUTTON" menu="1" id="RATIO_BUTTON_ID" typeAlign="1" cx="65" cy="13" x="75" y="86">
+   <image src="img\FormatButton.png" tooltip="translateMe(Aspect ratio)"/>      
+   <font name="Arial" height="9" weight="40" />
+   <text x="16" y="-1" cx="39" cy="13" color="0xFEF8F8F8" aligment="0x84" />   
+   <dropinfo cx="50"/>
+ </node>
+
+ <node class="BUTTON" menu="1" id="DEINT_BUTTON_ID" typeAlign="1" cx="65" cy="13" x="140" y="86">
+   <image src="img\DeintButton.png" tooltip="translateMe(Deinterlacing filters)"/>   
+   <font name="Arial" height="9" weight="40" />
+   <text x="18" y="-1" cx="37" cy="13" color="0xFEF8F8F8"  />   
+   <dropinfo cx="50"/>   
+ </node>
+
+ <node class="BUTTON" menu="1" id="SPEAKERS_CONFIG_BUTTON_ID" typeAlign="1" cx="65" cy="13" x="205" y="86">
+   <image src="img\TypeAudioButton.png" tooltip="translateMe(Speakers config)"/>   
+   <font name="Arial" height="9" weight="40" />
+   <text x="16" y="0" cx="39" cy="13" color="0xFEF8F8F8"  />   
+   <dropinfo cx="50"/>
+ </node>
+
+ <node class="BUTTON" id="SNAPSHOT_BUTTON_ID" typeAlign="1" cx="21" cy="18" x="79" y="36">
+   <image isalpha="1" src="img\snapshot.png" tooltip="translateMe(Snapshot)"/>
+ </node>
+
+ <node class="BUTTON" id="MUTE_BUTTON_ID" checkable="1" typeAlign="3" cx="30" cy="30" x="101" y="41">
+   <image isalpha="0" src="img\MuteButton.png" tooltip="translateMe(Mute)"/>   
+   <image checked="1" isalpha="0" src="img\MuteOnButton.png" tooltip="translateMe(Mute off)"/>   
+ </node>
+ 
+ <node class="SLIDER" id="VOLUME_SLIDER_ID" toolTipView="UPPER_TEXT_ID"  filltype="1" typeAlign="3" cx="59" cy="4" x="40" y="54">
+   <imageback isalpha="0" duration="400" statecount="2" src="img\VolBackSlider.png" />   
+   <imagecursor isalpha="0" statecount="2" left="0" top="0" right="59" bottom="4" src="img\VolCursorSlider.png" tooltip="translateMe(Volume %1)"/>   
+   <minmax min="0" max="200" />
+ </node>
+ 
+ <node class="SLIDER" id="POS_SLIDER_ID"  typeAlign="1" cx="-100" cy="5" x="9" y="23" xb="9">
+   <imagecursor isalpha="0" duration="400" left="0" right="11" top="0" bottom="10" statecount="2" src="img\BarCursor.png"/>      
+   <minmax min="0" max="10000" />   
+   <markinfo showalways="0" color="0x40101010" offset="1" size="-1" width="2"/>
+   <color>
+    <enabledleft  color1="0xFF0E9B89" color2="0xFF0E9B89" type="2"/>
+	<enabledright color1="0xFF17B9FF" color2="0xFF17B9FF" type="2"/>
+	<disabled color1="0xFF6A6A6A" color2="0xFF6A6A6A" type="2"/>
+   </color>
+ </node>
+  
+</controlpanel>
