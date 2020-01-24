@@ -11,5 +11,5 @@ RUN export DEBIAN_FRONTEND="noninteractive" \
 RUN mkdir /root/.wine
 COPY .wine /root/.wine
 COPY start.sh /root/start.sh
-RUN chmod +x //root/start.sh
+RUN chmod +x /root/start.sh
 CMD ["/bin/bash", "/root/start.sh"]
