@@ -22,9 +22,9 @@ Simpletv-wine container
 # Next Steps
 
 Once the container is running, try visiting :
- *http://localhost:10000
- *http://localhost:10002
- *http://localhost:10004 
- *etc
+ * http://localhost:10000
+ * http://localhost:10002
+ * http://localhost:10004 
+ * etc
 
 localhost - ip address of your host machine
