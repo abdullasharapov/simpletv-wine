@@ -17,7 +17,7 @@ Simpletv-wine container
  ## OR
 
  ## Run container with docker-compose.yml file
- *`docker-compose up -d`
+ * `docker-compose up -d`
 
 # Next Steps
 
