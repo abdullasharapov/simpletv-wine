@@ -17,11 +17,7 @@ Simpletv-wine container based on stable release from official repo
  * Cope start script to simpleTV dir `cp start_stv.sh simpleTV`
  * Start container `docker run --restart=always -tid --net=host -v /opt/simpletv-wine/simpleTV:/root/.wine/drive_c/simpleTV simpletv-wine /root/stv.sh`.
  
- ## OR
-
- ## Run container with docker-compose.yml file
- * `docker-compose up -d`
-
+ 
 # Next Steps
 
 Once the container is running, try visiting :
