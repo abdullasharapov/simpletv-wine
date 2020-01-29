@@ -13,11 +13,14 @@ Simpletv-wine container based on stable release from official repo
 # Running
  ## With docker run
  * `cd /opt/simpletv-wine`
- * Download SimpleTV archive from . Unpack `tar xjf simpleTV.tar.bz2 -C /opt/simpletv-wine`.
- * Cope start script to simpleTV dir `cp start_stv.sh simpleTV`
+ * Download SimpleTV archive `wget https://github.com/abdullasharapov/simpletv-wine/releases/download/1.0/simpleTV.tar.bz2`. Unpack `tar xjf simpleTV.tar.bz2 -C /opt/simpletv-wine`.
+ * Copy start script to simpleTV dir `cp start_stv.sh simpleTV`
  * Start container `docker run --restart=always -tid --net=host -v /opt/simpletv-wine/simpleTV:/root/.wine/drive_c/simpleTV simpletv-wine /root/stv.sh`.
  
- 
+ ## With docker-compose
+ * Not yet ready
+
+
 # Next Steps
 
 Once the container is running, try visiting :
