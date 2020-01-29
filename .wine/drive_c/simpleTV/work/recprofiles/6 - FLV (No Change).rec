@@ -1,2 +1,0 @@
---sout=#duplicate{dst=std{access=file,mux=flv,dst=$RECFILE}}
-flv

@@ -1,3 +1,0 @@
-dofile (m_simpleTV.MainScriptDir .. "user/video/video.lua")
-ExecuteFilesByReason('getaddress')
-
