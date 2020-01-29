@@ -14,6 +14,7 @@ RUN Xvfb :20.0 -ac -screen 0 800x600x24 > /dev/null 2>&1 & DISPLAY=:20.0 winecfg
     && cp /root/.wine/drive_c/windows/system32/netstat.exe  /root/.wine/drive_c/windows/netstat.exe \
     && cp /root/.wine/drive_c/windows/system32/find.exe  /root/.wine/drive_c/windows/find.exe \
     && killall -9 Xvfb
+# Specify the required ports, for each instance, the new port will be the previous + 2. Below is an example for three server instances
 EXPOSE 10000 10002 10004
 COPY stv.sh /root/stv.sh
 COPY system.reg /root/.wine/
