@@ -12,8 +12,10 @@ Simpletv-wine container based on stable release from official repo
 
 # Running
  ## With docker run
- * Download SimpleTV archive from . Unpack `tar xjf file.tar.bz2 -C /opt/simpletv-wine`.
- * Start container `docker run --restart=always -tid --net=host -v /opt/simpletv-wine/simpleTV:/root/.wine/drive_c/simpleTV simpletv-wine:latest /root/stv.sh`.
+ * `cd /opt/simpletv-wine`
+ * Download SimpleTV archive from . Unpack `tar xjf simpleTV.tar.bz2 -C /opt/simpletv-wine`.
+ * Cope start script to simpleTV dir `cp start_stv.sh simpleTV`
+ * Start container `docker run --restart=always -tid --net=host -v /opt/simpletv-wine/simpleTV:/root/.wine/drive_c/simpleTV simpletv-wine /root/stv.sh`.
  
  ## OR
 

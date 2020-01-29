@@ -1,4 +1,4 @@
-version: '2'
+version: '3.4'
 services:
   simpletv-wine:
      container_name: simpletv-wine
@@ -7,17 +7,6 @@ services:
      ports:
        - 10000:10000
        - 10002:10002
-       - 10004:10004
-     networks:
-       simpletv_net:
-          ipv4_address: 172.18.0.2
+     network_mode: host
      stdin_open: true
      tty: true
-
-networks:
-  simpletv_net:
-    driver: bridge
-    ipam:
-     config:
-       - subnet: 172.18.0.0/16
-         gateway: 172.18.0.1
